@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantum Launcher - A lightweight and fast Minecraft launcher.">
+    <meta name="keywords" content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source">
+    <meta name="author" content="Mrmayman">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,6 +21,11 @@
             background-size: cover;
             color: #f5e6f5;
             font-family: "Inter";
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
         }
 
         a {
@@ -46,12 +56,10 @@
 
         .preview {
             border-radius: 8px;
-            width: 70%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 50px;
-            margin-bottom: 50px;
+            width: 100%;
+            max-width: 100%;
             display: block;
+            margin: 50px auto;
         }
 
         .paras {
@@ -97,6 +105,9 @@
 
         .para {
             transition: transform 0.3s ease-in-out;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
         }
 
         .para:hover {
@@ -115,54 +126,56 @@
         <div class="para">
             <h2>A Minecraft launcher focused on simplicity</h2>
             <ul>
-                <li>Lightweight and fast.</li>
-                <li>Make separate instances of Minecraft.</li>
-                <li>Install fabric with a click.</li>
-                <li>Have Java installed and managed for you automatically.</li>
+                <ul class="text-overflow">
+                    <li>Lightweight and fast.</li>
+                    <li>Make separate instances of Minecraft.</li>
+                    <li>Install fabric with a click.</li>
+                    <li>Have Java installed and managed for you automatically.</li>
+                </ul>
             </ul>
             <a href="https://discord.gg/bWqRaSXar5" class="button">
-                <img src="discord.svg" class="icon">Join our discord!</a><br>
+                <img src="discord.svg" class="icon" alt="Discord Logo">Join our discord!</a><br>
         </div>
 
         <div class="para">
             <h2>Downloads</h2>
             <a href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.1/quantum_launcher_windows_x86_64.zip"
                 class="button">
-                <img src="windows.svg" class="icon"> Windows</a>
+                <img src="windows.svg" class="icon" alt="Windows Logo"> Windows</a>
             <a href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.1/quantum_launcher_linux_x86_64.zip"
                 class="button">
-                <img src="linux.svg" class="icon"> Linux</a>
+                <img src="linux.svg" class="icon" alt="Linux Logo"> Linux</a>
             <a href="https://github.com/Mrmayman/quantum-launcher" class="button">
-                <img src="github.svg" class="icon"> Source Code</a><br>
-        </div>
-
-        <div class="para">
-            <h2>File locations</h2>
-            <ul>
-                <li>On <b>Windows</b>, launcher files are at<br>
-                    <u>C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u>
-                </li>
-                <li>You probably won't see the AppData folder.<br>
-                    Press Windows + R and paste this path, and hit enter.
-                </li>
-                <li>On <b>Linux</b>, the launcher files are at<br>
-                    <u>~/.config/QuantumLauncher/</u> (~ refers to your home directory).
-                </li>
-                <li>The launcher settings, including manually<br>
-                    added Java versions and default username, is at<br>
-                    <u>QuantumLauncher/config.json</u>
-                </li>
-                <li>Instances are located at<br>
-                    <u>QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u>
-                </li>
-                <li>.minecraft folder is located at<br>
-                    <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
-                </li>
-            </ul>
+                <img src="github.svg" class="icon" alt="Github Logo"> Source Code</a><br>
+            <div class="para text-overflow">
+                <h2>File locations</h2>
+                <ul>
+                    <li>On <b>Windows</b>, launcher files are at<br>
+                        <u>C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u>
+                    </li>
+                    <li>You probably won't see the AppData folder.<br>
+                        Press Windows + R and paste this path, and hit enter.
+                    </li>
+                    <li>On <b>Linux</b>, the launcher files are at<br>
+                        <u>~/.config/QuantumLauncher/</u> (~ refers to your home directory).
+                    </li>
+                    <li>The launcher settings, including manually<br>
+                        added Java versions and default username, is at<br>
+                        <u>QuantumLauncher/config.json</u>
+                    </li>
+                    <li>Instances are located at<br>
+                        <u>QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u>
+                    </li>
+                    <li>.minecraft folder is located at<br>
+                        <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
+                    </li>
+                </ul>
+            </div>
         </div>
 
     </div>
-    <img src="quantum_launcher.png" class="preview">
+    <img alt="A image showing the window of quantum launcher along with minecraft to its side"
+        src="quantum_launcher.png" class="preview">
 
     <div class="paras">
         <div class="para">
