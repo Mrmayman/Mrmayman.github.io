@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Quantum Launcher - A lightweight and fast Minecraft launcher.">
+	<meta name="keywords" content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source">
+	<meta name="author" content="Mrmayman">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
 		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
 		rel="stylesheet">
 
-	<title>Mrmayman's website</title>
+	<title>Quantum Launcher</title>
 
 	<style>
 		html {
@@ -16,6 +21,11 @@
 			background-size: cover;
 			color: #e7e6f5;
 			font-family: "Inter";
+			margin: 0;
+		}
+
+		body {
+			margin: 0;
 		}
 
 		a {
@@ -32,6 +42,10 @@
 			margin-top: 0px;
 		}
 
+		li {
+			padding-bottom: 10px;
+		}
+
 		.para {
 			background-color: #2b3046;
 			text-align: left;
@@ -42,11 +56,14 @@
 
 		.preview {
 			border-radius: 8px;
-			width: 70%;
+			width: 100%;
+			max-width: 100%;
+			display: block;
+			margin: 50px auto;
 		}
 
 		.paras {
-			width: 70%;
+			width: fit-content;
 			margin: auto;
 			gap: 20px;
 		}
@@ -88,12 +105,16 @@
 
 		.para {
 			transition: transform 0.3s ease-in-out;
-			/* Smooth transition */
+			word-wrap: break-word;
+			overflow-wrap: break-word;
+			white-space: normal;
+			width: 70%;
+			margin: auto;
+			margin-bottom: 20px;
 		}
 
 		.para:hover {
 			transform: scale(1.05);
-			/* Slightly increase size on hover */
 		}
 	</style>
 </head>
@@ -103,7 +124,6 @@
 		<h1>Mrmayman's website</h1>
 		<h2>Hi there :3 (<a href="https://mrmayman.github.io/contact">Contact</a>)</h2>
 	</div>
-
 
 	<div class="paras">
 		<div class="para">
@@ -121,7 +141,6 @@
 			<img src="quantum_launcher.png" class="preview"><br><br>
 			<a href="https://mrmayman.github.io/quantumlauncher" class="button">More Info</a>
 		</div>
-	</div>
 </body>
 
 </html>
