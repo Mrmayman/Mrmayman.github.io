@@ -1,191 +1,234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Quantum Launcher - A lightweight and fast Minecraft launcher."
+        />
+        <meta
+            name="keywords"
+            content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source, Cracked, Free, Download"
+        />
+        <meta name="author" content="Mrmayman" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quantum Launcher - A lightweight and fast Minecraft launcher.">
-    <meta name="keywords" content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source">
-    <meta name="author" content="Mrmayman">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+        <title>Quantum Launcher</title>
 
-    <title>Quantum Launcher</title>
+        <style>
+            html {
+                background-image: url("purple-background-with-pattern-lines-dots.webp");
+                background-size: cover;
+                color: #f5e6f5;
+                font-family: "Inter";
+                margin: 0;
+            }
 
-    <style>
-        html {
-            background-image: url("purple-background-with-pattern-lines-dots.webp");
-            background-size: cover;
-            color: #f5e6f5;
-            font-family: "Inter";
-            margin: 0;
-        }
+            body {
+                margin: 0;
+            }
 
-        body {
-            margin: 0;
-        }
+            a {
+                color: #e3cde3;
+            }
 
-        a {
-            color: #e3cde3;
-        }
+            h1 {
+                margin-left: 20px;
+                margin: auto;
+                font-size: 40px;
+            }
 
-        h1 {
-            margin-left: 20px;
-            margin: auto;
-            font-size: 40px;
-        }
+            h2 {
+                margin-top: 0px;
+            }
 
-        h2 {
-            margin-top: 0px;
-        }
+            li {
+                padding-bottom: 10px;
+            }
 
-        li {
-            padding-bottom: 10px;
-        }
+            .para {
+                background-color: #3d2b46;
+                text-align: left;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
 
-        .para {
-            background-color: #3d2b46;
-            text-align: left;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+            .preview {
+                border-radius: 8px;
+                width: 100%;
+                max-width: 100%;
+                display: block;
+                margin: 50px auto;
+            }
 
-        .preview {
-            border-radius: 8px;
-            width: 100%;
-            max-width: 100%;
-            display: block;
-            margin: 50px auto;
-        }
+            .paras {
+                width: fit-content;
+                margin: auto;
+                gap: 20px;
+            }
 
-        .paras {
-            width: fit-content;
-            margin: auto;
-            gap: 20px;
-        }
+            .top {
+                padding-top: 40px;
+                padding-bottom: 20px;
+                text-align: center;
+            }
 
-        .top {
-            padding-top: 40px;
-            padding-bottom: 20px;
-            text-align: center;
-        }
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #fd9eff;
+                color: #000000;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-bottom: 4px;
+            }
 
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #fd9eff;
-            color: #000000;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-bottom: 4px;
-        }
+            .button:hover {
+                background-color: #e484e5;
+            }
 
-        .button:hover {
-            background-color: #e484e5;
-        }
+            .inter-regular {
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+            }
 
-        .inter-regular {
-            font-family: "Inter", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-style: normal;
-        }
+            .icon {
+                width: 16px;
+                height: auto;
+                vertical-align: middle;
+                margin-right: 8px;
+            }
 
-        .icon {
-            width: 16px;
-            height: auto;
-            vertical-align: middle;
-            margin-right: 8px;
-        }
+            .para {
+                transition: transform 0.3s ease-in-out;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
+            }
 
-        .para {
-            transition: transform 0.3s ease-in-out;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-        }
+            .para:hover {
+                transform: scale(1.05);
+            }
+        </style>
+    </head>
 
-        .para:hover {
-            transform: scale(1.05);
-        }
-    </style>
-</head>
-
-<body>
-    <div class="top">
-        <h1>Quantum Launcher</h1>
-        <h2>By <a href="https://mrmayman.github.io">Mrmayman</a></h2>
-    </div>
-
-    <div class="paras">
-        <div class="para">
-            <h2>A Minecraft launcher focused on simplicity</h2>
-            <ul>
-                <ul class="text-overflow">
-                    <li>Lightweight and fast.</li>
-                    <li>Make separate instances of Minecraft.</li>
-                    <li>Install forge or fabric with a click.</li>
-                    <li>Have Java installed and managed for you automatically.</li>
-                    <li>Now in version 0.3!</li>
-                </ul>
-            </ul>
-            <a href="https://discord.gg/bWqRaSXar5" class="button">
-                <img src="discord.svg" class="icon" alt="Discord Logo">Join our discord!</a><br>
+    <body>
+        <div class="top">
+            <h1>Quantum Launcher</h1>
+            <h2>By <a href="https://mrmayman.github.io">Mrmayman</a></h2>
         </div>
 
-        <div class="para">
-            <h2>Downloads</h2>
-            <a href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3/quantum_launcher_windows_x86_64.zip"
-                class="button">
-                <img src="windows.svg" class="icon" alt="Windows Logo"> Windows</a>
-            <a href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3/quantum_launcher_linux_x86_64.zip"
-                class="button">
-                <img src="linux.svg" class="icon" alt="Linux Logo"> Linux</a>
-            <a href="https://github.com/Mrmayman/quantum-launcher" class="button">
-                <img src="github.svg" class="icon" alt="Github Logo"> Source Code</a><br>
-            <div class="para text-overflow">
-                <h2>File locations</h2>
+        <div class="paras">
+            <div class="para">
+                <h2>A Minecraft launcher focused on simplicity</h2>
                 <ul>
-                    <li>On <b>Windows</b>, launcher files are at<br>
-                        <u>C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u>
-                    </li>
-                    <li>You probably won't see the AppData folder.<br>
-                        Press Windows + R and paste this path, and hit enter.
-                    </li>
-                    <li>On <b>Linux</b>, the launcher files are at<br>
-                        <u>~/.config/QuantumLauncher/</u> (~ refers to your home directory).
-                    </li>
-                    <li>Instances are located at<br>
-                        <u>QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u>
-                    </li>
-                    <li>.minecraft folder is located at<br>
-                        <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
-                    </li>
+                    <ul class="text-overflow">
+                        <li>Lightweight and fast.</li>
+                        <li>Make separate instances of Minecraft.</li>
+                        <li>Install forge/fabric/optifine with a click.</li>
+                        <li>Automatic Java version management</li>
+                        <li>Now in version 0.3!</li>
+                    </ul>
                 </ul>
+                <iframe
+                    src="https://discord.com/widget?id=1280474064540012619&theme=dark"
+                    width="350"
+                    height="500"
+                    allowtransparency="true"
+                    frameborder="0"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                ></iframe
+                ><br />
+            </div>
+
+            <div class="para">
+                <h2>Downloads</h2>
+                <a
+                    href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3/quantum_launcher_windows_x86_64.zip"
+                    class="button"
+                >
+                    <img src="windows.svg" class="icon" alt="Windows Logo" />
+                    Windows</a
+                >
+                <a
+                    href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3/quantum_launcher_linux_x86_64.zip"
+                    class="button"
+                >
+                    <img src="linux.svg" class="icon" alt="Linux Logo" />
+                    Linux</a
+                >
+                <a
+                    href="https://github.com/Mrmayman/quantum-launcher"
+                    class="button"
+                >
+                    <img src="github.svg" class="icon" alt="Github Logo" />
+                    Source Code</a
+                ><br />
+                <div class="para text-overflow">
+                    <h2>File locations</h2>
+                    <ul>
+                        <li>
+                            On <b>Windows</b>, launcher files are at<br />
+                            <u
+                                >C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u
+                            >
+                        </li>
+                        <li>
+                            You probably won't see the AppData folder.<br />
+                            Press Windows + R and paste this path, and hit
+                            enter.
+                        </li>
+                        <li>
+                            On <b>Linux</b>, the launcher files are at<br />
+                            <u>~/.config/QuantumLauncher/</u> (~ refers to your
+                            home directory).
+                        </li>
+                        <li>
+                            Instances are located at<br />
+                            <u
+                                >QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u
+                            >
+                        </li>
+                        <li>
+                            .minecraft folder is located at<br />
+                            <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <img
+            alt="A image showing the window of quantum launcher along with minecraft to its side"
+            src="quantum_launcher.webp"
+            class="preview"
+        />
 
-    </div>
-    <img alt="A image showing the window of quantum launcher along with minecraft to its side"
-        src="quantum_launcher.webp" class="preview">
+        <div class="paras">
+            <div class="para">
+                Proudly
+                <a href="https://github.com/Mrmayman/quantum-launcher"
+                    >open source</a
+                >
+                under GNU General Public License v3. <br /><br />
+                <a
+                    href="https://www.freepik.com/free-ai-image/purple-background-with-pattern-lines-dots_40862343.htm#fromView=search&page=1&position=10&uuid=a7c1c7b0-7639-44b4-8784-c3f85665d49c"
+                >
+                    (Background) Image by Sketchepedia on Freepik</a
+                ><br /><br />
 
-    <div class="paras">
-        <div class="para">
-            Proudly
-            <a href="https://github.com/Mrmayman/quantum-launcher">open source</a>
-            under GNU General Public License v3. <br><br>
-            <a
-                href="https://www.freepik.com/free-ai-image/purple-background-with-pattern-lines-dots_40862343.htm#fromView=search&page=1&position=10&uuid=a7c1c7b0-7639-44b4-8784-c3f85665d49c">
-                (Background) Image by Sketchepedia on Freepik</a><br><br>
-
-            <a href="https://mrmayman.github.io/contact">Contact Me</a>
+                <a href="https://mrmayman.github.io/contact">Contact Me</a>
+            </div>
         </div>
-    </div>
-</body>
-
+    </body>
 </html>
