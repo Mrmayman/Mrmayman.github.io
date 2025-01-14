@@ -54,11 +54,15 @@
             }
 
             .para {
-                background-color: #3d2b46;
+                background-color: #3d2b46ff;
                 text-align: left;
                 border-radius: 8px;
                 padding: 20px;
                 margin-bottom: 20px;
+                transition: transform 0.3s ease-in-out;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
             }
 
             .preview {
@@ -72,7 +76,10 @@
             .paras {
                 width: fit-content;
                 margin: auto;
+                border-radius: 8px;
                 gap: 20px;
+                background-color: #3d2b46cc;
+                padding: 20px;
             }
 
             .top {
@@ -110,17 +117,73 @@
                 margin-right: 8px;
             }
 
-            .para {
-                transition: transform 0.3s ease-in-out;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                white-space: normal;
-            }
-
             .para:hover {
                 transform: scale(1.05);
             }
+
+            .faq {
+                width: 90%; /* Adjust to make it wider than the paras section */
+                max-width: 1200px; /* Limit the maximum width to prevent it from becoming too wide */
+                margin: 50px auto; /* Center the FAQ section with some margin for spacing */
+                background-color: rgba(
+                    61,
+                    43,
+                    70,
+                    0.8
+                ); /* Similar background color to match paras */
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            .faqitem {
+                background-color: #3d2b46;
+                margin-bottom: 20px; /* Space between FAQ items */
+                padding: 20px;
+                border-radius: 8px;
+            }
+
+            .faq h1 {
+                margin-bottom: 20px;
+            }
+
+            .faqitem h2 {
+                font-size: 24px; /* Adjust the size for a better header appearance */
+                margin-bottom: 10px;
+            }
+
+            .faqitem ul {
+                list-style-type: none; /* Remove default list styling */
+                padding-left: 0;
+            }
+
+            .faqitem li {
+                padding-bottom: 10px; /* Space between list items */
+                line-height: 1.5; /* Make text more readable */
+            }
         </style>
+
+        <script>
+            // Function to load content dynamically via AJAX
+            function loadHTML(url, targetId) {
+                console.log(url);
+                fetch(url)
+                    .then((response) => {
+                        return response.text();
+                    })
+                    .then((html) => {
+                        console.log("HTML: ", html);
+                        document.getElementById(targetId).innerHTML = html;
+                    })
+                    .catch((error) =>
+                        console.log("Error loading HTML: ", error),
+                    );
+            }
+
+            // Load content on page load
+            window.onload = function () {
+                loadHTML("faq.html", "l-faq-page");
+            };
+        </script>
     </head>
 
     <body>
@@ -141,6 +204,8 @@
                         <li>Now in version 0.3!</li>
                     </ul>
                 </ul>
+            </div>
+            <div class="para">
                 <iframe
                     src="https://discord.com/widget?id=1280474064540012619&theme=dark"
                     width="350"
@@ -175,37 +240,34 @@
                     <img src="github.svg" class="icon" alt="Github Logo" />
                     Source Code</a
                 ><br />
-                <div class="para text-overflow">
-                    <h2>File locations</h2>
-                    <ul>
-                        <li>
-                            On <b>Windows</b>, launcher files are at<br />
-                            <u
-                                >C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u
-                            >
-                        </li>
-                        <li>
-                            You probably won't see the AppData folder.<br />
-                            Press Windows + R and paste this path, and hit
-                            enter.
-                        </li>
-                        <li>
-                            On <b>Linux</b>, the launcher files are at<br />
-                            <u>~/.config/QuantumLauncher/</u> (~ refers to your
-                            home directory).
-                        </li>
-                        <li>
-                            Instances are located at<br />
-                            <u
-                                >QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u
-                            >
-                        </li>
-                        <li>
-                            .minecraft folder is located at<br />
-                            <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
-                        </li>
-                    </ul>
-                </div>
+            </div>
+            <div class="para text-overflow">
+                <h2>File locations</h2>
+                <ul>
+                    <li>
+                        On <b>Windows</b>, launcher files are at<br />
+                        <u
+                            >C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u
+                        >
+                    </li>
+                    <li>
+                        You probably won't see the AppData folder.<br />
+                        Press Windows + R and paste this path, and hit enter.
+                    </li>
+                    <li>
+                        On <b>Linux</b>, the launcher files are at<br />
+                        <u>~/.config/QuantumLauncher/</u> (~ refers to your home
+                        directory).
+                    </li>
+                    <li>
+                        Instances are located at<br />
+                        <u>QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u>
+                    </li>
+                    <li>
+                        .minecraft folder is located at<br />
+                        <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
+                    </li>
+                </ul>
             </div>
         </div>
         <img
@@ -213,6 +275,8 @@
             src="quantum_launcher.webp"
             class="preview"
         />
+
+        <div id="l-faq-page"></div>
 
         <div class="paras">
             <div class="para">

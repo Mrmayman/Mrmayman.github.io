@@ -1,0 +1,176 @@
+<div class="faq">
+    <h1>FAQ (frequently asked questions)</h1>
+    <div class="faqitem">
+        <h2>How do I install mods?</h2>
+        <ul>
+            <li>
+                Select your instance and click on the "Mods" button, then
+                install a loader (if you haven't already) by clicking on
+                "Install Fabric", "Install Forge", or the other loaders. (Fabric
+                is recommended)
+            </li>
+            <li>
+                After that, click on "Download mods" and browse through the
+                store to find mods you want to install.
+            </li>
+            <li>
+                You can also install mods manually. Click on "Go to Mods Folder"
+                button and paste the mods in there.
+            </li>
+        </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>How do I install shaders?</h2>
+        <ul>
+            <li>
+                Select your instance and click on the "Mods" button, then click
+                on "Install Fabric", select the latest version and install it.
+            </li>
+            <li>
+                Then select your instance and go to "Mods" and click on
+                "Download mods".
+            </li>
+            <li>Download <b>Iris, Sodium, Fabric API, and Mod Menu</b></li>
+            <li>
+                Download the shader you want to use from the internet. In the
+                main menu, click on "Files".
+            </li>
+            <li>
+                Go to the "shaderpacks" folder (create one if it isn't there)
+                and paste the shader zip or folder you downloaded.
+            </li>
+            <li>
+                You should be ready to go! Select the shader in the video
+                settings in Minecraft.
+            </li>
+            <li>
+                Note: You can also do this with Optifine, but it's less
+                recommended. Instead of installing Fabric and those mods, just
+                install Optifine.
+            </li>
+        </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>How do I change skins?</h2>
+        <ul>
+            <li>
+                Use the customskinloader mod. Go to "Mods" and if you haven't
+                already, install Fabric or Forge.
+            </li>
+            <li>
+                Then click on "Download mods" and search for "CustomSkinLoader"
+                and install it.
+            </li>
+            <li>
+                After that, you can configure CustomSkinLoader in-game. It's
+                recommended that you create an
+                <a href="ely.by">ElyBy Account</a> and pair it with this mod.
+            </li>
+        </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>
+            How do I change the icon/create a shortcut of the launcher on Linux?
+        </h2>
+        <ul>
+            <li>
+                Create a quantumlauncher.desktop file. Type in the following
+                thing:
+
+                <pre>
+                    <code>
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/path/to/quantum_launcher
+Name=QuantumLauncher
+Icon=/path/to/icon.ico
+                    </code>
+                </pre>
+            </li>
+            <li>
+                Add the path to the quantum_launcher executable to the Exec
+                field.
+            </li>
+            <li>
+                If you want an icon, download one from
+                https://mrmayman.github.io/quantumlauncher/favicon.ico and add
+                it's path to the Icon field, otherwise remove that line.
+            </li>
+            <li>
+                If you want to see the debug output of the launcher, change
+                Terminal to true.
+            </li>
+        </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>"Connection timed out: No further information"</h2>
+        <ul>
+            <li>
+                Try allowing Minecraft through firewall. Here's a
+                <a href="https://www.youtube.com/watch?v=Nn2BJ9jLYNs">video</a> on how to do it.
+                And if you're playing Minecraft on a private server also
+                try telling the host to do the same.
+            </li>
+            <li>
+                Make sure you have a stable internet connection.
+            </li>
+            <li>
+                If you are using a VPN, try disabling it. If you are using a
+                firewall, make sure the launcher is allowed to connect to the
+                internet. If you are using a proxy, make sure the launcher is configured
+                to use it.
+            </li>
+        </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>Invalid Session</h2>
+        <ul>
+            <li>
+                This means that the server needs a paid Minecraft account.
+                If you know the host, you can tell them to open server.properties
+                file and set online-mode to false.
+            </li>
+            <li>
+                (WARNING: Doing this will make the server vulnerable to hackers,
+                maybe consider adding some kind of login mod and whitelist to the server too)
+            </li>
+        </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>Mod ___ ___ requires version ___ or later of (some mod), which is missing</h2>
+        <ul>
+            <li>
+                Install whatever mod is said at the end, whatever it may be.
+
+                Go to Mods->Download Mods then search the name and install it.
+            </li>
+        </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>Storing the game on another drive (windows)</h2>
+        <ul>
+            <li>
+                Press Windows and R keys, type %appdata% A file explorer window will come.
+            </li>
+            <li>
+                In here, find the QuantumLauncher folder and move it to the other drive (cut and paste).
+            </li>
+            <li>
+                Then open command prompt or terminal and type
+                <u><code>mklink /D "%APPDATA%\Roaming\QuantumLauncher" "E:\Path\To\Link"</code></u>
+                where <b>E:\Path\To\Link</b> is changed to wherever your folder is on the other drive
+                (make sure to use the correct drive letter like D:\ or E:\ )
+            </li>
+        </ul>
+    </div>
+</div>
