@@ -18,149 +18,11 @@
             href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
             rel="stylesheet"
         />
+
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="stylesheet" href="ql.css">
 
         <title>Quantum Launcher</title>
-
-        <style>
-            html {
-                background-image: url("purple-background-with-pattern-lines-dots.webp");
-                background-size: cover;
-                color: #f5e6f5;
-                font-family: "Inter";
-                margin: 0;
-            }
-
-            body {
-                margin: 0;
-            }
-
-            a {
-                color: #e3cde3;
-            }
-
-            h1 {
-                margin-left: 20px;
-                margin: auto;
-                font-size: 40px;
-            }
-
-            h2 {
-                margin-top: 0px;
-            }
-
-            li {
-                padding-bottom: 10px;
-            }
-
-            .para {
-                background-color: #3d2b46ff;
-                text-align: left;
-                border-radius: 8px;
-                padding: 20px;
-                margin-bottom: 20px;
-                transition: transform 0.3s ease-in-out;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                white-space: normal;
-            }
-
-            .preview {
-                border-radius: 8px;
-                width: 100%;
-                max-width: 100%;
-                display: block;
-                margin: 50px auto;
-            }
-
-            .paras {
-                width: fit-content;
-                margin: auto;
-                border-radius: 8px;
-                gap: 20px;
-                background-color: #3d2b46cc;
-                padding: 20px;
-            }
-
-            .top {
-                padding-top: 40px;
-                padding-bottom: 20px;
-                text-align: center;
-            }
-
-            .button {
-                display: inline-block;
-                padding: 10px 20px;
-                font-size: 16px;
-                background-color: #fd9eff;
-                color: #000000;
-                text-decoration: none;
-                border-radius: 5px;
-                margin-bottom: 4px;
-            }
-
-            .button:hover {
-                background-color: #e484e5;
-            }
-
-            .inter-regular {
-                font-family: "Inter", sans-serif;
-                font-optical-sizing: auto;
-                font-weight: 400;
-                font-style: normal;
-            }
-
-            .icon {
-                width: 16px;
-                height: auto;
-                vertical-align: middle;
-                margin-right: 8px;
-            }
-
-            .para:hover {
-                transform: scale(1.05);
-            }
-
-            .faq {
-                width: 90%; /* Adjust to make it wider than the paras section */
-                max-width: 1200px; /* Limit the maximum width to prevent it from becoming too wide */
-                margin: 50px auto; /* Center the FAQ section with some margin for spacing */
-                background-color: rgba(
-                    61,
-                    43,
-                    70,
-                    0.8
-                ); /* Similar background color to match paras */
-                padding: 20px;
-                border-radius: 8px;
-            }
-
-            .faqitem {
-                background-color: #3d2b46;
-                margin-bottom: 20px; /* Space between FAQ items */
-                padding: 20px;
-                border-radius: 8px;
-            }
-
-            .faq h1 {
-                margin-bottom: 20px;
-            }
-
-            .faqitem h2 {
-                font-size: 24px; /* Adjust the size for a better header appearance */
-                margin-bottom: 10px;
-            }
-
-            .faqitem ul {
-                list-style-type: none; /* Remove default list styling */
-                padding-left: 0;
-            }
-
-            .faqitem li {
-                padding-bottom: 10px; /* Space between list items */
-                line-height: 1.5; /* Make text more readable */
-            }
-        </style>
 
         <script>
             // Function to load content dynamically via AJAX
@@ -171,11 +33,10 @@
                         return response.text();
                     })
                     .then((html) => {
-                        console.log("HTML: ", html);
                         document.getElementById(targetId).innerHTML = html;
                     })
                     .catch((error) =>
-                        console.log("Error loading HTML: ", error),
+                        console.error("Error loading HTML: ", error),
                     );
             }
 
@@ -239,35 +100,8 @@
                     Source Code</a
                 ><br />
             </div>
-            <div class="para text-overflow">
-                <h2>File locations</h2>
-                <ul>
-                    <li>
-                        On <b>Windows</b>, launcher files are at<br />
-                        <u
-                            >C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u
-                        >
-                    </li>
-                    <li>
-                        You probably won't see the AppData folder.<br />
-                        Press Windows + R and paste this path, and hit enter.
-                    </li>
-                    <li>
-                        On <b>Linux</b>, the launcher files are at<br />
-                        <u>~/.config/QuantumLauncher/</u> (~ refers to your home
-                        directory).
-                    </li>
-                    <li>
-                        Instances are located at<br />
-                        <u>QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u>
-                    </li>
-                    <li>
-                        .minecraft folder is located at<br />
-                        <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
-                    </li>
-                </ul>
-            </div>
         </div>
+
         <img
             alt="A image showing the window of quantum launcher along with minecraft to its side"
             src="quantum_launcher.webp"

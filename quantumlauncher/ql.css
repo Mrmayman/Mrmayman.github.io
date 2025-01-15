@@ -1,0 +1,150 @@
+html {
+    background-image: url("purple-background-with-pattern-lines-dots.webp");
+    background-size: cover;
+    color: #f5e6f5;
+    font-family: "Inter";
+    margin: 0;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    color: #e3cde3;
+}
+
+h1 {
+    margin-left: 20px;
+    margin: auto;
+    font-size: 40px;
+}
+
+h2 {
+    margin-top: 0px;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
+.preview {
+    /* border-radius: 8px; */
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin: 50px auto;
+}
+
+.para {
+    background-color: #3d2b46ff;
+    text-align: left;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+@media (min-width: 1024px) {
+    .para:hover {
+        transform: scale(1.05);
+    }
+}
+
+.paras {
+    margin: auto;
+    border-radius: 8px;
+    gap: 20px;
+    background-color: #3d2b46cc;
+}
+
+@media (min-width: 1024px) {
+    .paras {
+        width: fit-content;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .paras {
+        width: 100%;
+    }
+}
+
+.top {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #fd9eff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 4px;
+}
+
+.button:hover {
+    background-color: #e484e5;
+}
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.icon {
+    width: 16px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.faq {
+    width: 90%; /* Adjust to make it wider than the paras section */
+    max-width: 1200px; /* Limit the maximum width to prevent it from becoming too wide */
+    margin: 50px auto; /* Center the FAQ section with some margin for spacing */
+    background-color: rgba(
+        61,
+        43,
+        70,
+        0.8
+    ); /* Similar background color to match paras */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.faqitem {
+    background-color: #3d2b46;
+    margin-bottom: 20px; /* Space between FAQ items */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.faq h1 {
+    margin-bottom: 20px;
+}
+
+.faqitem h2 {
+    font-size: 24px; /* Adjust the size for a better header appearance */
+    margin-bottom: 10px;
+}
+
+.faqitem ul {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 0;
+}
+
+.faqitem li {
+    padding-bottom: 10px; /* Space between list items */
+    line-height: 1.5; /* Make text more readable */
+}
