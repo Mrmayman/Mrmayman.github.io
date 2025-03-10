@@ -3,7 +3,6 @@ html {
     background-size: cover;
     color: #f5e6f5;
     font-family: "Inter";
-    margin: 0;
 }
 
 body {
@@ -15,13 +14,15 @@ a {
 }
 
 h1 {
-    margin-left: 20px;
+    margin-bottom: 10px;
     margin: auto;
     font-size: 40px;
 }
 
 h2 {
+    font-size: 30px;
     margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 li {
@@ -83,11 +84,12 @@ li {
 .button {
     display: inline-block;
     padding: 10px 20px;
+    border: none;
     font-size: 16px;
     background-color: #fd9eff;
     color: #000000;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 4px;
 }
 
@@ -104,7 +106,7 @@ li {
 
 .icon {
     width: 16px;
-    height: auto;
+    height: 16px;
     vertical-align: middle;
     margin-right: 8px;
 }
@@ -147,4 +149,125 @@ li {
 .faqitem li {
     padding-bottom: 10px; /* Space between list items */
     line-height: 1.5; /* Make text more readable */
+}
+
+/* new stuff */
+
+@media (min-width: 767px) {
+    .bar {
+        background-color: #3a2436cc;
+        display: flex;
+    }
+
+    .bar-content {
+        padding: 35px;
+    }
+
+    .bar img:not(.icon) {
+        height: 300px;
+        display: inline-block;
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar2 {
+        background-color: #221920cc;
+        display: flex;
+    }
+
+    .bar2 img {
+        height: 400px;
+        display: inline-block;
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar3 {
+        background-color: #221920cc;
+        display: flex;
+    }
+
+    .bar3-img1 {
+        width: 35%;
+        display: inline-block;
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar3-img2 {
+        width: 30%;
+        display: inline-block;
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar4 {
+        background-color: #3a2436cc;
+        display: flex;
+    }
+
+    .bar4 img {
+        width: 33%;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 767px) {
+    .bar {
+        background-color: #3a2436cc;
+    }
+
+    .bar-content {
+        padding: 35px;
+    }
+
+    .bar img {
+        width: 100%;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar2 {
+        background-color: #221920cc;
+    }
+
+    .bar2 img {
+        width: 100%;
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar3 {
+        background-color: #221920cc;
+    }
+
+    .bar3-img1 {
+        width: 100%;
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar3-img2 {
+        width: 100%;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        margin: 0px;
+    }
+
+    .bar4 {
+        background-color: #3a2436cc;
+        display: flex;
+    }
+
+    .bar4 img {
+        width: 33%;
+        border-radius: 8px;
+    }
 }

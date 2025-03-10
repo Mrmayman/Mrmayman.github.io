@@ -9,7 +9,7 @@
         />
         <meta
             name="keywords"
-            content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source, Cracked, Free, Download"
+            content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source, Cracked, Free, Download, QuantumLauncher, Mrmayman, QL, Forge, Quilt, Optifine, ARM, aarch64, Linux"
         />
         <meta name="author" content="Mrmayman" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,13 +19,13 @@
             rel="stylesheet"
         />
 
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <link rel="stylesheet" href="ql.css">
 
         <title>Quantum Launcher</title>
 
         <script>
-            // Function to load content dynamically via AJAX
             function loadHTML(url, targetId) {
                 console.log(url);
                 fetch(url)
@@ -40,10 +40,13 @@
                     );
             }
 
-            // Load content on page load
             window.onload = function () {
                 loadHTML("faq.html", "l-faq-page");
             };
+
+            function scrollToSection(name) {
+                document.getElementById(name).scrollIntoView({ behavior: "smooth" });
+            }
         </script>
     </head>
 
@@ -53,52 +56,115 @@
             <h2>By <a href="https://mrmayman.github.io">Mrmayman</a></h2>
         </div>
 
+        <div class="bar">
+            <div class="bar-content">
+                <h2>A simple, fast and powerful Minecraft launcher.</h2><br>
+                <button class="button" onclick="scrollToSection('Downloads')">
+                    <img src="icons/download.svg" class="icon" alt="Download" />
+                    Download
+                </button>
+                <button class="button" onclick="scrollToSection('Discord')">
+                    <img src="icons/discord.svg" class="icon" alt="Download" />
+                    Join Discord
+                </button>
+            </div>
+            <img
+                alt="A image showing the window of quantum launcher along with Minecraft to its side"
+                src="quantum_launcher.webp"
+            />
+        </div>
+
+        <div class="bar2">
+            <img
+                alt="Quantum Launcher window with task manager, showing the low resource usage"
+                src="screenshots/lightweight.webp"
+            />
+            <div class="bar-content">
+                <h1>Incredibly lightweight.</h1><br>
+                QuantumLauncher uses <b>very</b> little CPU and RAM.<br>
+                It's designed to be fast and responsive so you can focus on what you love!<br><br>
+
+                In fact, sometimes it's lighter than Task Manager itself!
+            </div>
+        </div>
+
+        <div class="bar">
+            <div class="bar-content">
+                <h2>Get. Set. Go!</h2>
+                A few clicks. That's all it takes to set up your ideal Minecraft install<br>
+                Just create a new instance and hit play!<br><br>
+
+                And if you want to make your experience unique, adding mods is a breeze!
+            </div>
+            <img
+                alt="The new instance button being clicked"
+                src="screenshots/new.webp"
+            />
+        </div>
+
+        <div class="bar3">
+            <img
+                alt="The list of mod loaders loaders and their install buttons"
+                src="screenshots/install_loader.webp"
+                class="bar3-img1"
+            />
+            <div class="bar-content">
+                <h2>Who said modding is hard?</h2>
+                From <b>managing mod loaders</b>,<br>
+                to downloading mods from the <b>built-in store</b>,<br>
+                to even <b>packaging and sending mods</b> to your friends...<br><br>
+                ...It's all here!
+            </div>
+            <img
+                alt="The built-in mod store"
+                src="screenshots/mod_store.webp"
+                class="bar3-img2"
+            />
+        </div>
+
+        <div class="bar4">
+            <div class="bar-content">
+                <h2>And so much more!</h2>
+                <h3>(<a href="https://github.com/Mrmayman/quantum-launcher">It's open source too!</a>)</h3>
+                <img
+                    alt="Old Minecraft versions running seamlessly"
+                    src="screenshots/old_mc.webp"
+                />
+                <img
+                    alt="A Windows 7 inspired theme showcasing the customization"
+                    src="screenshots/themes.webp"
+                />
+                <img
+                    alt="A demo of mod presets that allow you to package mods"
+                    src="screenshots/presets.webp"
+                />
+            </div>
+        </div><br>
+
         <div class="paras">
             <div class="para">
-                <h2>A simple, fast Minecraft launcher</h2>
-                <ul class="text-overflow">
-                    <li>Lightweight, clean and <b>incredibly</b> fast.</li>
-                    <li>Install forge/fabric/optifine/quilt with a click!</li>
-                    <li>Built-in mod store and mod preset system</li>
-                    <li>Play old versions seamlessly with Omniarchive<br>
-                        integration and skin/sound fixes</li>
-                    <li>Fully free and open source!</li>
-                    <li>Now in version 0.3.1!</li>
-                </ul>
-            </div>
-            <div class="para">
-                <iframe
-                    src="https://discord.com/widget?id=1280474064540012619&theme=dark"
-                    width="350"
-                    height="500"
-                    allowtransparency="true"
-                    frameborder="0"
-                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                ></iframe
-                ><br />
-            </div>
-
-            <div class="para">
+                <div id="Downloads">
+                </div>
                 <h2>Downloads</h2>
                 <a
                     href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3.1/quantum_launcher_windows_x86_64.zip"
                     class="button"
                 >
-                    <img src="windows.svg" class="icon" alt="Windows Logo" />
+                    <img src="icons/windows.svg" class="icon" alt="Windows Logo" />
                     Windows (x64)</a
                 >
                 <a
                     href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3.1/quantum_launcher_linux_x86_64.zip"
                     class="button"
                 >
-                    <img src="linux.svg" class="icon" alt="Linux Logo" />
+                    <img src="icons/linux.svg" class="icon" alt="Linux Logo" />
                     Linux (x64)</a
                 >
                 <a
                     href="https://github.com/Mrmayman/quantum-launcher"
                     class="button"
                 >
-                    <img src="github.svg" class="icon" alt="Github Logo" />
+                    <img src="icons/github.svg" class="icon" alt="Github Logo" />
                     Source Code</a
                 ><br />
                 <br><h3>Experimental Builds<br></h3>
@@ -110,37 +176,51 @@
                     href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3.1/quantum_launcher_windows_i686.zip"
                     class="button"
                 >
-                    <img src="windows.svg" class="icon" alt="Windows Logo" />
+                    <img src="icons/windows.svg" class="icon" alt="Windows Logo" />
                     Windows 32 bit (x86)</a
                 >
                 <a
                     href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3.1/quantum_launcher_windows_aarch64.zip"
                     class="button"
                 >
-                    <img src="windows.svg" class="icon" alt="Windows Logo" />
+                    <img src="icons/windows.svg" class="icon" alt="Windows Logo" />
                     Windows ARM (64 bit)</a
                 ><br>
                 <a
                     href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3.1/quantum_launcher_linux_aarch64.zip"
                     class="button"
                 >
-                    <img src="linux.svg" class="icon" alt="Linux Logo" />
+                    <img src="icons/linux.svg" class="icon" alt="Linux Logo" />
                     Linux ARM (64 bit)</a
                 ><br>
                 <a
                     href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3.1/quantum_launcher_macos_x86_64.zip"
                     class="button"
                 >
-                    <img src="apple.svg" class="icon" alt="Linux Logo" />
+                    <img src="icons/apple.svg" class="icon" alt="Linux Logo" />
                     macOS x64 (Intel)</a
                 >
                 <a
                     href="https://github.com/Mrmayman/quantum-launcher/releases/download/v0.3.1/quantum_launcher_macos_aarch64.zip"
                     class="button"
                 >
-                    <img src="apple.svg" class="icon" alt="Linux Logo" />
+                    <img src="icons/apple.svg" class="icon" alt="Linux Logo" />
                     macOS ARM (M-Series)</a
                 >
+            </div>
+
+            <div class="para">
+                <div id="Discord">
+                </div>
+                <iframe
+                    src="https://discord.com/widget?id=1280474064540012619&theme=dark"
+                    width="350"
+                    height="500"
+                    allowtransparency="true"
+                    frameborder="0"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                ></iframe
+                ><br />
             </div>
         </div>
 
