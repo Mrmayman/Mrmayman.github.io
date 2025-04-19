@@ -115,7 +115,6 @@
                 thing:
 
                 <pre>
-                    <code>
 [Desktop Entry]
 Encoding=UTF-8
 Version=1.0
@@ -123,9 +122,7 @@ Type=Application
 Terminal=false
 Exec=/path/to/quantum_launcher
 Name=QuantumLauncher
-Icon=/path/to/icon.ico
-                    </code>
-                </pre>
+Icon=/path/to/icon.ico</pre>
             </li>
             <li>
                 Add the path to the quantum_launcher executable to the Exec
@@ -211,5 +208,23 @@ Icon=/path/to/icon.ico
                 (make sure to use the correct drive letter like D:\ or E:\ )
             </li>
         </ul>
+    </div>
+
+    <div class="faqitem">
+        <h2>(<i>linux</i>): microsoft account error: keyring error: Platform secure storage failure: DBus error: The name is not activatable</h2>
+        Try installing <code>gnome-keyring</code> and <code>libsecret</code> (the package name might vary based on distro, try searching it)<br>
+        Then try <code>eval $(/usr/bin/gnome-keyring-daemon --start)</code><br><br>
+
+        Note: you might need to run this command after every startup of your computer.<br>
+        Consider adding it to startup commands, or creating a script that runs this before the launcher.<br>
+    </div>
+
+    <div class="faqitem">
+        <h2>(<i>linux</i>) microsoft account error: keyring error: Couldn't access platform secure storage: Secret Service: no result found</h2>
+        - Try running <code>seahorse</code> (install it if it's not there)<br>
+        - Then in the sidebar, click the + button then Password Keyring<br>
+        - Then name it "Login"<br>
+        - Set whatever password you want<br>
+        See if your issue is fixed now.<br>
     </div>
 </div>
