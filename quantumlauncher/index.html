@@ -63,6 +63,16 @@
 
             window.onload = function () {
                 loadHTML("faq.html", "l-faq-page");
+
+                window.addEventListener('hashchange', function() {
+                    const hash = window.location.hash;
+                    if (hash) {
+                        const targetAnchor = document.querySelector(hash);
+                        if (targetAnchor) {
+                            targetAnchor.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
             };
 
             function scrollToSection(name) {
