@@ -61,19 +61,24 @@
                     );
             }
 
+            function scrollToHash() {
+                const hash = window.location.hash;
+                if (hash) {
+                    const targetAnchor = document.querySelector(hash);
+                    if (targetAnchor) {
+                        targetAnchor.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+
             window.onload = function () {
                 loadHTML("faq.html", "l-faq-page");
-
-                window.addEventListener('hashchange', function() {
-                    const hash = window.location.hash;
-                    if (hash) {
-                        const targetAnchor = document.querySelector(hash);
-                        if (targetAnchor) {
-                            targetAnchor.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }
-                });
+                scrollToHash();
             };
+
+            window.addEventListener('hashchange', function () {
+                scrollToHash();
+            });
 
             function scrollToSection(name) {
                 document.getElementById(name).scrollIntoView({ behavior: "smooth" });
