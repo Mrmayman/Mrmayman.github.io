@@ -117,7 +117,7 @@
                 <pre>
 [Desktop Entry]
 Encoding=UTF-8
-Version=1.0
+Version=0.4
 Type=Application
 Terminal=false
 Exec=/path/to/quantum_launcher
@@ -128,19 +128,45 @@ Icon=/path/to/icon.ico</pre>
                 Add the path to the quantum_launcher executable to the Exec
                 field.
             </li>
-            <li>
-                If you want an icon, download one from
-                https://mrmayman.github.io/quantumlauncher/favicon.ico and add
-                it's path to the Icon field, otherwise remove that line.
-            </li>
-            <li>
-                If you want to see the debug output of the launcher, change
-                Terminal to true.
-            </li>
+            <ul>
+                <li>
+                    If you want an icon, download one from
+                    <a href="https://mrmayman.github.io/quantumlauncher/favicon.ico">here</a> and add
+                    it's path to the Icon field, otherwise remove that line.
+                </li>
+                <li>
+                    If you want to see the debug output of the launcher, change
+                    Terminal to true.
+                </li>
+            </ul>
             <li>
                 Now move this file to ~/.local/share/applications/<br>
                 (note: ~ means your home directory)<br>
                 (also, if you don't see the .local folder, press ctrl H in your file explorer to show hidden files)
+            </li>
+            <li>
+                If the launcher doesn't show up in your menu, try any of these until it works:<br><br>
+                <ul>
+                    <li>
+                        Restarting the desktop environment
+                        or logging out of your computer and logging back in.
+                    </li>
+                    <li>
+                        Running the command:<br>
+                        <code>chmod +x ~/.local/share/applications/quantumlauncher.desktop</code><br>
+                        (replace with the path to the desktop file)
+                    </li>
+                    <li>
+                        Running the command:<br>
+                        <code>desktop-file-validate ~/.local/share/applications/quantumlauncher.desktop</code><br>
+                        (replace with the path to the desktop file)
+                    </li>
+                    <li>
+                        Running the command:<br>
+                        <code>update-desktop-database ~/.local/share/applications</code><br>
+                        (replace with the folder containing the desktop file)
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
@@ -211,20 +237,25 @@ Icon=/path/to/icon.ico</pre>
     </div>
 
     <div class="faqitem">
-        <h2>(<i>linux</i>): microsoft account error: keyring error: Platform secure storage failure: DBus error: The name is not activatable</h2>
-        Try installing <code>gnome-keyring</code> and <code>libsecret</code> (the package name might vary based on distro, try searching it)<br>
-        Then try <code>eval $(/usr/bin/gnome-keyring-daemon --start)</code><br><br>
-
-        Note: you might need to run this command after every startup of your computer.<br>
-        Consider adding it to startup commands, or creating a script that runs this before the launcher.<br>
+        <h2 id="keyring-not-installed">(<i>linux</i>): microsoft account error: keyring error: Platform secure storage failure: DBus error: The name is not activatable</h2>
+        <ul>
+        <li>
+            Try installing <code>gnome-keyring</code> and <code>libsecret</code> (the package name might vary based on distro, try searching it)<br>
+            Then try <code>eval $(/usr/bin/gnome-keyring-daemon --start)</code><br><br>
+        </li>
+        <li>
+            Note: you might need to run this command after every startup of your computer.<br>
+            Consider adding it to startup commands, or creating a script that runs this before the launcher.<br>
+        </li>
+        </ul>
     </div>
 
     <div class="faqitem">
         <h2 id="keyring-error">(<i>linux</i>) microsoft account error: keyring error: Couldn't access platform secure storage: Secret Service: no result found</h2>
-        - Try running <code>seahorse</code> (install it if it's not there)<br>
-        - Then in the sidebar, click the + button then Password Keyring<br>
-        - Then name it "Login"<br>
-        - Set whatever password you want<br>
-        See if your issue is fixed now.<br>
+        <ul>
+        <li>Try running <code>seahorse</code> (install it if it's not there)</li>
+        <li>In the left sidebar, click the + button then click Password Keyring</li>
+        <li>Name it "Login" and set whatever password you want</li>
+        </ul>
     </div>
 </div>
