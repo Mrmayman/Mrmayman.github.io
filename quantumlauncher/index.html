@@ -48,13 +48,17 @@
 
         <script>
             function loadHTML(url, targetId) {
-                console.log(url);
+                console.log("Loading Sub-Page:", url);
                 fetch(url)
                     .then((response) => {
                         return response.text();
                     })
                     .then((html) => {
                         document.getElementById(targetId).innerHTML = html;
+
+                        requestAnimationFrame(() => {
+                            scrollToHash();
+                        });
                     })
                     .catch((error) =>
                         console.error("Error loading HTML: ", error),
