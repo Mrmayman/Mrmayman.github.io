@@ -49,6 +49,18 @@ li {
     white-space: normal;
 }
 
+.parabox {
+    background-color: #883696ff;
+    text-align: left;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
 @media (min-width: 1024px) {
     .para:hover {
         transform: scale(1.05);
@@ -176,13 +188,14 @@ li {
     .bar2 {
         background-color: #221920cc;
         display: flex;
+        padding-left: 20px;
     }
 
     .bar2 img {
         height: 400px;
         display: inline-block;
-        mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+        -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
         margin: 0px;
     }
 
