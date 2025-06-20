@@ -43,6 +43,7 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <link rel="stylesheet" href="ql.css">
+        <link rel="stylesheet" href="topbar.css">
 
         <title>Quantum Launcher</title>
 
@@ -84,14 +85,69 @@
             //     scrollToHash();
             // });
 
-            // function scrollToSection(name) {
-            //     document.getElementById(name).scrollIntoView({ behavior: "smooth" });
-            // }
+            function scrollToSection(name) {
+                document.getElementById(name).scrollIntoView({ behavior: "smooth" });
+            }
         </script>
+
+        <style>
+            /* Tooltip styles for FAQ button */
+            .faq-tooltip {
+                position: relative;
+                display: inline-block;
+            }
+            .faq-tooltip .faq-tooltiptext {
+                visibility: hidden;
+                width: 180px;
+                background: #23233a;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 8px 0;
+                position: absolute;
+                z-index: 10;
+                bottom: 125%;
+                left: 50%;
+                margin-left: -90px;
+                opacity: 0;
+                transition: opacity 0.2s;
+                font-size: 0.95rem;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            }
+            .faq-tooltip:hover .faq-tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
     </head>
 
     <body>
-        <div class="top">
+        <!-- Collapsible Top Bar -->
+        <div class="topbar-collapsed" id="topbar-collapsed">
+            <div class="bar-title unselectable" onclick="scrollToSection('Home')" style="user-select:none;cursor:pointer;">
+                <img src="favicon.ico" alt="QL Favicon" />
+                QuantumLauncher
+            </div>
+            <div class="bar-nav">
+                <button onclick="scrollToSection('Downloads')">
+                    <img src="icons/download.svg" alt="Download" class="topbar-icon" />
+                    Download
+                </button>
+                <button onclick="scrollToSection('Discord')">
+                    <img src="icons/discord.svg" alt="Discord" class="topbar-icon" />
+                    Discord
+                </button>
+                <a href="faq.html" target="_blank">
+                    <img src="icons/faq.svg" alt="FAQ" class="topbar-icon" />
+                    FAQ
+                </a>
+                <a href="https://github.com/Mrmayman/quantumlauncher" target="_blank">
+                    <img src="icons/github.svg" alt="GitHub" class="topbar-icon" />
+                    GitHub
+                </a>
+            </div>
+        </div>
+        <div class="top" id="Home">
             <h1>Quantum Launcher</h1>
             <h2>By <a href="https://mrmayman.github.io">Mrmayman</a></h2>
         </div>
@@ -106,9 +162,11 @@
                 <button class="button" onclick="scrollToSection('Discord')">
                     <img src="icons/discord.svg" class="icon" alt="Download" />
                     Join Discord
-                </button><br><br>
+                </button>
                 <a class="button" href="https://mrmayman.github.io/quantumlauncher/faq">
-                    FAQ <sub>(Frequently Asked Questions)</sub>
+                    <span class="faq-tooltip">FAQ 
+                        <span class="faq-tooltiptext">Frequently Asked Questions</span>
+                    </span>
                 </a>
             </div>
             <img
@@ -181,13 +239,13 @@
                     alt="A demo of mod presets that allow you to package mods"
                     src="screenshots/presets.webp"
                 />
+                <div id="Downloads">
+                </div>
             </div>
         </div><br>
 
         <div class="paras">
             <div class="para">
-                <div id="Downloads">
-                </div>
                 <h2>Downloads: (<a href="https://mrmayman.github.io/quantumlauncher/faq">Open FAQ</a>)</h2>
                 <a
                     href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.4.1/quantum_launcher_windows_x86_64.zip"
@@ -264,11 +322,11 @@
                     <img src="icons/github.svg" class="icon" alt="Github Logo" />
                     Source Code</a
                 >
+                <div id="Discord">
+                </div>
             </div>
 
             <div class="para">
-                <div id="Discord">
-                </div>
                 <iframe
                     src="https://discord.com/widget?id=1280474064540012619&theme=dark"
                     width="350"
@@ -305,5 +363,26 @@
                 <a href="https://mrmayman.github.io/contact">Contact Me</a>
             </div>
         </div>
+
+        <script>
+            // Collapsible Top Bar logic
+            (function() {
+                const topbar = document.getElementById('topbar-collapsed');
+                let lastScrollY = window.scrollY;
+                function onScroll() {
+                    if (window.scrollY > 80) {
+                        topbar.classList.add('visible');
+                    } else {
+                        topbar.classList.remove('visible');
+                    }
+                }
+                window.addEventListener('scroll', onScroll);
+            })();
+            // scrollToSection function (already present, but ensure global)
+            function scrollToSection(name) {
+                const el = document.getElementById(name);
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+            }
+        </script>
     </body>
 </html>
