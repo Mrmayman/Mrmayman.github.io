@@ -1,6 +1,8 @@
 html {
+    /* background-image: url("purple-background-with-pattern-lines-dots.webp");
+    background-size: cover; */
     background-color: #251226;
-    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23382a39' fill-opacity='0.8' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23443345' fill-opacity='1.0' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat;
     color: #f5e6f5;
     font-family: "Inter";
@@ -62,9 +64,9 @@ li {
     white-space: normal;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .para:hover {
-        transform: scale(1.05);
+        /* transform: scale(1.05); */
     }
 }
 
@@ -75,9 +77,9 @@ li {
     background-color: #311e3bcc;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .paras {
-        width: fit-content;
+        width: 50%;
         padding: 20px;
     }
 }
@@ -107,7 +109,7 @@ li {
 }
 
 .button:hover {
-    background-color: #e484e5;
+    /* background-color: #e484e5; */
 }
 
 .inter-regular {

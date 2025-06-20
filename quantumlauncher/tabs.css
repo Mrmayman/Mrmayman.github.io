@@ -1,0 +1,42 @@
+.tab-container {
+    width: 100%; /* Default for mobile */
+    margin: 0 auto; /* Center the container */
+}
+
+@media (min-width: 768px) {
+    .tab-container {
+        /* width: 70%; */
+    }
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid #b169b3;
+}
+
+.tab-button {
+  background-color: #b169b3;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+  margin-right: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.tab-button.active {
+  background-color: #fd9eff;
+}
+
+.tab-pane {
+  display: none;
+  padding: 20px;
+  border: 1px solid #b169b3;
+  border-top: none;
+  border-radius: 0 5px 5px 5px;
+}
+
+.tab-pane.active {
+  display: block;
+}
