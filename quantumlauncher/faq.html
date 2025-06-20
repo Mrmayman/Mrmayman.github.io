@@ -43,6 +43,7 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <link rel="stylesheet" href="ql.css">
+        <link rel="stylesheet" href="topbar.css">
 
         <title>FAQ: Quantum Launcher</title>
 
@@ -87,12 +88,37 @@
             // function scrollToSection(name) {
             //     document.getElementById(name).scrollIntoView({ behavior: "smooth" });
             // }
+
         </script>
     </head>
 
     <body>
+        <!-- Collapsible Top Bar -->
+        <div class="topbar-collapsed" id="topbar-collapsed">
+            <div class="bar-title unselectable" onclick="window.location.href = 'https://mrmayman.github.io/quantumlauncher'" style="user-select:none;cursor:pointer;">
+                <img src="favicon.ico" alt="QL Favicon" />
+                QuantumLauncher
+            </div>
+            <div class="bar-nav">
+                <a href="https://mrmayman.github.io/quantumlauncher/#Downloads">
+                    <img src="icons/download.svg" alt="Download" class="topbar-icon" />
+                    Download
+                </a>
+                <a href="https://mrmayman.github.io/quantumlauncher/#Discord">
+                    <img src="icons/discord.svg" alt="Discord" class="topbar-icon" />
+                    Discord
+                </a>
+                <a href="https://github.com/Mrmayman/quantumlauncher" target="_blank">
+                    <img src="icons/github.svg" alt="GitHub" class="topbar-icon" />
+                    GitHub
+                </a>
+            </div>
+        </div>
         <div class="top">
-            <h1>Frequently asked questions (FAQ) for <a href="https://mrmayman.github.io/quantumlauncher">QuantumLauncher</a></h1>
+            <h1>
+                <a href="https://mrmayman.github.io/quantumlauncher">QuantumLauncher</a>:
+                FAQ (Frequently asked questions)
+            </h1>
         </div>
 
     <div class="faq">
@@ -387,5 +413,20 @@ Icon=/path/to/icon.ico</pre>
                 <a href="https://mrmayman.github.io/contact">Contact Me</a>
             </div>
         </div>
+
+        <script>
+            (function() {
+                const topbar = document.getElementById('topbar-collapsed');
+                // Removed `lastScrollY` as it's not used in this simplified `onScroll`
+                function onScroll() {
+                    if (window.scrollY > 80) {
+                        topbar.classList.add('visible');
+                    } else {
+                        topbar.classList.remove('visible');
+                    }
+                }
+                window.addEventListener('scroll', onScroll);
+            })();
+        </script>
     </body>
 </html>

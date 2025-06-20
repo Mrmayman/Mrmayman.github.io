@@ -145,6 +145,18 @@ li {
     border-radius: 8px;
 }
 
+@media (min-width: 768px) {
+    .faqitem {
+        margin: 0 auto 20px auto; /* Center the item and maintain bottom margin */
+        padding-left: 20px; /* Reset padding-left for desktop */
+    }
+
+    .faq {
+        width: 60%;
+        margin: 50px auto; /* Center the container and maintain top/bottom margin */
+    }
+}
+
 .faq h1 {
     margin-bottom: 20px;
 }
