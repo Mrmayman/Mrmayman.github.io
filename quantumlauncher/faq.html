@@ -131,29 +131,66 @@
                 But if that's not enough:
             </li><br>
             <li>
-                On <b>Windows</b>, launcher files are at<br />
-                <u
-                    >C:/Users/<b>YOUR_USERNAME</b>/AppData/Roaming/QuantumLauncher/</u
-                ><br>
+                On <b>Windows</b>, launcher files are at
+                <div class="copy-box">
+                  <pre><code id="faq-path-windows">C:/Users/YOUR_USERNAME/AppData/Roaming/QuantumLauncher/</code></pre>
+                  <button class="copy-btn" onclick="copyFlatpakCommand('faq-path-windows', this)" title="Copy to clipboard">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
                 You probably won't see the AppData folder.<br />
                 Press Windows + R and paste this path, and hit enter.
             </li>
             <li>
-                On <b>Linux</b>, the launcher files are at<br />
-                <u>~/.config/QuantumLauncher/</u> (~ refers to your home
-                directory).
+                On <b>Linux</b>, the launcher files are at
+                <div class="copy-box">
+                  <pre><code id="faq-path-linux">~/.config/QuantumLauncher/</code></pre>
+                  <button class="copy-btn" onclick="copyFlatpakCommand('faq-path-linux', this)" title="Copy to clipboard">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div> (~ refers to your home directory).
             </li>
             <li>
-                On <b>Mac</b>, the launcher files are at<br />
-                <u>~/Library/Application Support/QuantumLauncher/</u>
+                On <b>Mac</b>, the launcher files are at
+                <div class="copy-box">
+                  <pre><code id="faq-path-mac">~/Library/Application Support/QuantumLauncher/</code></pre>
+                  <button class="copy-btn" onclick="copyFlatpakCommand('faq-path-mac', this)" title="Copy to clipboard">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
             </li><br>
             <li>
-                Instances are located at<br />
-                <u>QuantumLauncher/instances/<b>YOUR_INSTANCE</b>/</u>
+                Instances are located at
+                <div class="copy-box">
+                  <pre><code id="faq-path-instances">QuantumLauncher/instances/YOUR_INSTANCE/</code></pre>
+                  <button class="copy-btn" onclick="copyFlatpakCommand('faq-path-instances', this)" title="Copy to clipboard">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
             </li>
             <li>
-                .minecraft folder is located at<br />
-                <u><b>YOUR_INSTANCE</b>/.minecraft/</u>
+                .minecraft folder is located at
+                <div class="copy-box">
+                  <pre><code id="faq-path-minecraft">YOUR_INSTANCE/.minecraft/</code></pre>
+                  <button class="copy-btn" onclick="copyFlatpakCommand('faq-path-minecraft', this)" title="Copy to clipboard">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
             </li>
         </ul>
     </div>
@@ -181,7 +218,15 @@
         <h2 id="macos-gatekeeper">macOS: "QuantumLauncher is damaged" / "cannot be opened" / "eject disk image"</h2>
         <ul>
         As a temporary workaround, run this in the terminal:<br>
-        <pre>xattr -rc /Applications/quantum-launcher.app</pre>
+        <div class="copy-box">
+          <pre><code id="faq-macos-xattr-command">xattr -rc /Applications/quantum-launcher.app</code></pre>
+          <button class="copy-btn" onclick="copyFlatpakCommand('faq-macos-xattr-command', this)" title="Copy to clipboard">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </div>
         Apple being a greedy company, demands a
         "Developer Id" fee from me, that I can't afford.
         If I don't pay, they intentionally block my app which is what
@@ -246,8 +291,8 @@
                 Create a quantumlauncher.desktop file. Type in the following
                 thing:
 
-                <pre>
-[Desktop Entry]
+                <div class="copy-box">
+                  <pre><code id="faq-linux-desktop-file">[Desktop Entry]
 Encoding=UTF-8
 Version=1.5
 Type=Application
@@ -257,7 +302,14 @@ Comment=A simple, powerful Minecraft launcher
 Categories=Game;
 Exec=/path/to/quantum_launcher
 PrefersNonDefaultGPU=true
-Icon=/path/to/icon.ico</pre>
+Icon=/path/to/icon.ico</code></pre>
+                  <button class="copy-btn" onclick="copyFlatpakCommand('faq-linux-desktop-file', this)" title="Copy to clipboard">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
             </li>
             <li>
                 Add the path to the quantum_launcher executable to the Exec
@@ -287,18 +339,42 @@ Icon=/path/to/icon.ico</pre>
                         or logging out of your computer and logging back in.
                     </li>
                     <li>
-                        Running the command:<br>
-                        <code>chmod +x ~/.local/share/applications/quantumlauncher.desktop</code><br>
+                        Running the command:
+                        <div class="copy-box">
+                          <pre><code id="faq-linux-chmod">chmod +x ~/.local/share/applications/quantumlauncher.desktop</code></pre>
+                          <button class="copy-btn" onclick="copyFlatpakCommand('faq-linux-chmod', this)" title="Copy to clipboard">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                          </button>
+                        </div>
                         (replace with the path to the desktop file)
                     </li>
                     <li>
-                        Running the command:<br>
-                        <code>desktop-file-validate ~/.local/share/applications/quantumlauncher.desktop</code><br>
+                        Running the command:
+                        <div class="copy-box">
+                          <pre><code id="faq-linux-validate">desktop-file-validate ~/.local/share/applications/quantumlauncher.desktop</code></pre>
+                          <button class="copy-btn" onclick="copyFlatpakCommand('faq-linux-validate', this)" title="Copy to clipboard">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                          </button>
+                        </div>
                         (replace with the path to the desktop file)
                     </li>
                     <li>
-                        Running the command:<br>
-                        <code>update-desktop-database ~/.local/share/applications</code><br>
+                        Running the command:
+                        <div class="copy-box">
+                          <pre><code id="faq-linux-update">update-desktop-database ~/.local/share/applications</code></pre>
+                          <button class="copy-btn" onclick="copyFlatpakCommand('faq-linux-update', this)" title="Copy to clipboard">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                            </svg>
+                          </button>
+                        </div>
                         (replace with the folder containing the desktop file)
                     </li>
                 </ul>
@@ -363,10 +439,17 @@ Icon=/path/to/icon.ico</pre>
                 In here, find the QuantumLauncher folder and move it to the other drive (cut and paste).
             </li>
             <li>
-                Then open command prompt or terminal and type
-                <u><code>mklink /D "%APPDATA%\Roaming\QuantumLauncher" "E:\Path\To\Link"</code></u>
-                where <b>E:\Path\To\Link</b> is changed to wherever your folder is on the other drive
-                (make sure to use the correct drive letter like D:\ or E:\ )
+                Then open command prompt or terminal and type 
+<div class="copy-box">
+  <pre><code id="faq-windows-mklink">mklink /D "%APPDATA%\Roaming\QuantumLauncher" "E:\Path\To\Link"</code></pre>
+  <button class="copy-btn" onclick="copyFlatpakCommand('faq-windows-mklink', this)" title="Copy to clipboard">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+    </svg>
+  </button>
+</div>
+where <b>E:\Path\To\Link</b> is changed to wherever your folder is on the other drive
             </li>
         </ul>
     </div>
@@ -376,7 +459,16 @@ Icon=/path/to/icon.ico</pre>
         <ul>
         <li>
             Try installing <code>gnome-keyring</code> and <code>libsecret</code> (the package name might vary based on distro, try searching it)<br>
-            Then try <code>eval $(/usr/bin/gnome-keyring-daemon --start)</code><br><br>
+            Then try 
+            <div class="copy-box">
+              <pre><code id="faq-linux-keyring-eval">eval $(/usr/bin/gnome-keyring-daemon --start)</code></pre>
+              <button class="copy-btn" onclick="copyFlatpakCommand('faq-linux-keyring-eval', this)" title="Copy to clipboard">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+              </button>
+            </div>
         </li>
         <li>
             Note: you might need to run this command after every startup of your computer.<br>
