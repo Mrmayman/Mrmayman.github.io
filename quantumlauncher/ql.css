@@ -322,7 +322,18 @@ li {
   color: #fff;
   font-size: 1em;
   font-family: 'Fira Mono', 'Consolas', monospace;
-  white-space: pre-wrap;
+  white-space: pre;         /* Prevents wrapping */
+  overflow-x: auto;         /* Enables horizontal scroll if needed */
+  scrollbar-color: #fd9eff #883696; /* Optional: custom scrollbar for theme */
+  scrollbar-width: thin;
+}
+.copy-box pre::-webkit-scrollbar {
+  height: 8px;
+  background: #883696;
+}
+.copy-box pre::-webkit-scrollbar-thumb {
+  background: #fd9eff;
+  border-radius: 4px;
 }
 .copy-btn {
   position: absolute;
