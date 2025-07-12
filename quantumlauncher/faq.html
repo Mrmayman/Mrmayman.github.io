@@ -519,6 +519,28 @@ where <b>E:\Path\To\Link</b> is changed to wherever your folder is on the other 
                 }
                 window.addEventListener('scroll', onScroll);
             })();
+
+            function copyFlatpakCommand(id, btn) {
+              const code = document.getElementById(id).innerText;
+              navigator.clipboard.writeText(code);
+
+              btn.classList.add('copied');
+              btn.innerHTML = `
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" style="stroke:#3d2b46;stroke-width:3;fill:none"/>
+                </svg>
+              `;
+
+              setTimeout(() => {
+                btn.classList.remove('copied');
+                btn.innerHTML = `
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                `;
+              }, 1200);
+            }
         </script>
     </body>
 </html>
