@@ -311,7 +311,15 @@
                                     <img src="icons/apple.svg" class="icon" alt="macOS Logo" />
                                     WARNING: On macOS, if you have a "QuantumLauncher is <br>
                                     corrupted" or "damaged" error, run this in the terminal:<br>
-                                    <pre>xattr -rc /Applications/quantum-launcher.app</pre>
+                                    <div class="copy-box">
+                                      <pre><code id="macos-xattr-command">xattr -rc /Applications/quantum-launcher.app</code></pre>
+                                      <button class="copy-btn" onclick="copyFlatpakCommand('macos-xattr-command', this)" title="Copy to clipboard">
+                                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                      </button>
+                                    </div>
                                     <a href="https://mrmayman.github.io/quantumlauncher/faq.html#macos-gatekeeper">
                                         More info
                                     </a>
@@ -336,8 +344,26 @@
                                 <div class="parabox">
                                     <img src="icons/flatpak.svg" class="icon" alt="macOS Logo" />
                                     Or you can install it as a Flatpak app, by running
-                                    <pre>flatpak remote-add quantum-launcher \<br>    oci+https://mrmayman.github.io/ql-flatpak-remote/<br>
-flatpak install io.github.Mrmayman.QuantumLauncher</pre>
+
+                                    <div class="copy-box">
+                                      <pre><code id="flatpak-command-1">flatpak remote-add quantum-launcher \ oci+https://mrmayman.github.io/ql-flatpak-remote/</code></pre>
+                                      <button class="copy-btn" onclick="copyFlatpakCommand('flatpak-command-1', this)" title="Copy to clipboard">
+                                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                      </button>
+                                    </div>
+
+                                    <div class="copy-box">
+                                      <pre><code id="flatpak-command-2">flatpak install io.github.Mrmayman.QuantumLauncher</code></pre>
+                                      <button class="copy-btn" onclick="copyFlatpakCommand('flatpak-command-2', this)" title="Copy to clipboard">
+                                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                        </svg>
+                                      </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="github">
@@ -446,6 +472,27 @@ flatpak install io.github.Mrmayman.QuantumLauncher</pre>
               });
             });
 
+            function copyFlatpakCommand(id, btn) {
+              const code = document.getElementById(id).innerText;
+              navigator.clipboard.writeText(code);
+
+              btn.classList.add('copied');
+              btn.innerHTML = `
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" style="stroke:#3d2b46;stroke-width:3;fill:none"/>
+                </svg>
+              `;
+
+              setTimeout(() => {
+                btn.classList.remove('copied');
+                btn.innerHTML = `
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                `;
+              }, 1200);
+            }
         </script>
     </body>
 </html>

@@ -302,3 +302,79 @@ li {
         border-radius: 8px;
     }
 }
+
+/* --- Copy Box for Code Commands --- */
+.copy-box {
+  position: relative;
+  background: rgba(253, 158, 255, 0.18); /* translucent light purple */
+  border-radius: 12px;
+  padding: 1em 3em 1em 1em;
+  margin: 1em 0;
+  overflow: auto;
+  border: 2px solid #fd9eff; /* brighter border */
+  box-shadow: 0 4px 24px 0 rgba(253, 158, 255, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  /* Optional: subtle gradient for depth */
+  background-image: linear-gradient(135deg, rgba(253,158,255,0.22) 0%, rgba(136,54,150,0.18) 100%);
+}
+.copy-box pre {
+  margin: 0;
+  background: none;
+  color: #fff;
+  font-size: 1em;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  white-space: pre;         /* Prevents wrapping */
+  overflow-x: auto;         /* Enables horizontal scroll if needed */
+  scrollbar-color: #fd9eff #883696; /* Optional: custom scrollbar for theme */
+  scrollbar-width: thin;
+}
+.copy-box pre::-webkit-scrollbar {
+  height: 8px;
+  background: #883696;
+}
+.copy-box pre::-webkit-scrollbar-thumb {
+  background: #fd9eff;
+  border-radius: 4px;
+}
+.copy-btn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: #fd9eff;
+  border: none;
+  color: #3d2b46;
+  border-radius: 5px;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px 0 rgba(253,158,255,0.18);
+}
+.copy-btn:hover {
+  background: #fff;
+  color: #b169b3;
+}
+.copy-btn.copied {
+  /* Keep original purple theme instead of green */
+  background: #fd9eff !important;
+  color: #3d2b46 !important;
+  /* Add smooth animation for the tick icon */
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+
+/* Animation for the tick icon */
+.copy-btn.copied svg {
+  animation: tickAppear 0.3s ease-out;
+}
+
+@keyframes tickAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
