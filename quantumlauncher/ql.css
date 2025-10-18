@@ -108,6 +108,11 @@ li {
     margin-bottom: 4px;
 }
 
+.bdownload {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
 .button:hover {
     /* background-color: #e484e5; */
 }
