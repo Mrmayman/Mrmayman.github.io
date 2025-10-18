@@ -462,9 +462,50 @@
                 if (el) el.scrollIntoView({ behavior: "smooth" });
             }
 
+            // Function to detect operating system from user agent
+            function detectOS() {
+              const userAgent = navigator.userAgent.toLowerCase();
+              
+              if (userAgent.includes('win')) {
+                return 'windows';
+              } else if (userAgent.includes('mac')) {
+                return 'macos';
+              } else if (userAgent.includes('linux')) {
+                return 'linux';
+              } else {
+                return 'windows'; // Default fallback
+              }
+            }
+
+            // Function to switch to a specific tab
+            function switchToTab(targetOS) {
+              const tabButtons = document.querySelectorAll('.tab-button');
+              const tabPanes = document.querySelectorAll('.tab-pane');
+
+              // Deactivate all buttons and panes
+              tabButtons.forEach(btn => btn.classList.remove('active'));
+              tabPanes.forEach(pane => pane.classList.remove('active'));
+
+              // Activate the target button
+              const targetButton = document.querySelector(`[data-target="${targetOS}"]`);
+              if (targetButton) {
+                targetButton.classList.add('active');
+              }
+
+              // Activate the target pane
+              const targetPane = document.getElementById(targetOS);
+              if (targetPane) {
+                targetPane.classList.add('active');
+              }
+            }
+
             document.addEventListener('DOMContentLoaded', function() {
               const tabButtons = document.querySelectorAll('.tab-button');
               const tabPanes = document.querySelectorAll('.tab-pane');
+
+              // Auto-switch to detected OS tab on page load
+              const detectedOS = detectOS();
+              switchToTab(detectedOS);
 
               tabButtons.forEach(button => {
                 button.addEventListener('click', function() {
