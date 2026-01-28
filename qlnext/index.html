@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Quantum Launcher - A lightweight, powerful, open-source Minecraft launcher"
+        />
+        <meta
+            name="keywords"
+            content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source, Free, Download, QuantumLauncher, Mrmayman, QL, Forge, Quilt, Optifine, ARM, aarch64, Linux, FOSS, Rust, iced"
+        />
+        <meta name="author" content="Mrmayman" />
+
+        <!-- Open Graph: Facebook / LinkedIn -->
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://mrmayman.github.io/quantumlauncher"
+        />
+        <meta
+            property="og:title"
+            content="mrmayman.github.io/quantumlauncher"
+        />
+        <meta
+            property="og:description"
+            content="A lightweight, powerful Minecraft launcher"
+        />
+        <meta
+            property="og:image"
+            content="http://mrmayman.github.io/quantumlauncher/quantum_launcher.webp"
+        />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content="https://mrmayman.github.io/quantumlauncher/"
+        />
+        <meta
+            property="twitter:title"
+            content="mrmayman.github.io/quantumlauncher"
+        />
+        <meta
+            property="twitter:description"
+            content="A lightweight, powerful Minecraft launcher"
+        />
+        <meta
+            property="twitter:image"
+            content="http://mrmayman.github.io/quantumlauncher/quantum_launcher.webp"
+        />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Hide iOS Share popup -->
+        <!-- <meta name="apple-mobile-web-app-capable" content="yes"> -->
+        <!-- 100% privacy-first analytics -->
+        <script
+            async
+            src="https://scripts.simpleanalyticscdn.com/latest.js"
+        ></script>
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+        <title>QuantumLauncher</title>
+
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="downloads.css" />
+
+        <script>
+            function scrollToSection(name) {
+                document
+                    .getElementById(name)
+                    .scrollIntoView({ behavior: "smooth" });
+            }
+
+            // https://www.w3schools.com/howto/howto_js_tabs.asp
+            function openDownloadTab(evt, cityName) {
+                var i;
+                var tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                var tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(
+                        " active",
+                        "",
+                    );
+                }
+
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            function openDownloadTabByOS() {
+                const ua = navigator.userAgent.toLowerCase();
+                let targetTabId = "t-windows"; // default fallback
+
+                if (ua.includes("mac os")) {
+                    targetTabId = "t-macOS";
+                } else if (ua.includes("linux") && !ua.includes("android")) {
+                    targetTabId = "t-linux";
+                } else if (ua.includes("windows")) {
+                    targetTabId = "t-windows";
+                }
+
+                const tabButtons = document.getElementsByClassName("tablinks");
+
+                for (let btn of tabButtons) {
+                    if (
+                        btn
+                            .getAttribute("onclick")
+                            ?.includes(`'${targetTabId}'`)
+                    ) {
+                        openDownloadTab({ currentTarget: btn }, targetTabId);
+                        return;
+                    }
+                }
+
+                // absolute fallback: first tab
+                if (tabButtons.length) {
+                    openDownloadTab(
+                        { currentTarget: tabButtons[0] },
+                        "t-windows",
+                    );
+                }
+            }
+
+            // Run on startup
+            document.addEventListener("DOMContentLoaded", openDownloadTabByOS);
+        </script>
+    </head>
+
+    <body>
+        <div class="page">
+            <header>
+                <div class="header-row">
+                    <img src="favicon.ico" height="40" width="40" />
+                    <div class="header-logo">
+                        QuantumLauncher
+                        <div style="font-size: 12px">
+                            By <a href="..">Mrmayman</a>
+                        </div>
+                    </div>
+                    <button
+                        onclick="scrollToSection('downloads')"
+                        class="header-button"
+                    >
+                        Download
+                    </button>
+                    <a href="/quantumlauncher/faq.html">FAQ</a>
+                    <a href="https://discord.gg/bWqRaSXar5">Discord</a>
+                    <a href="https://github.com/Mrmayman/quantumlauncher"
+                        >GitHub</a
+                    >
+                </div>
+            </header>
+            <div class="downloads" style="padding: 16px; margin-bottom: 16px">
+                Welcome to the experimental website redesign!
+            </div>
+            <div class="hero-row hero-img-main">
+                <div class="hero-column hero-img-main">
+                    <h1 style="margin-top: 16px">QuantumLauncher</h1>
+                    A simple, powerful, open-source Minecraft launcher with
+                    instance management, modding features, and more!<br />
+
+                    <button
+                        type="button"
+                        onclick="scrollToSection('downloads')"
+                        class="hero-button"
+                        style="margin-top: 12px"
+                    >
+                        <img
+                            src="/quantumlauncher/icons/download.svg"
+                            width="28"
+                            height="28"
+                            style="
+                                margin-left: 16px;
+                                margin-right: 16px;
+                                filter: invert();
+                            "
+                        />
+                        Download
+                    </button>
+                </div>
+                <!--Note: Shadow in screenshot is Black, alpha 194, radius 24-->
+                <img
+                    class="hero-img-main"
+                    src="screenshots/ql.webp"
+                    alt="Main page of launcher, sidebar to select instances, and various options"
+                />
+            </div>
+            <div class="hero-row">
+                <div class="hero-column">
+                    <h2>Incredibly Lightweight</h2>
+                    Uses minimal CPU and RAM!<br />Lighter than the vanilla
+                    launcher, common alternatives and even Task Manager!
+                </div>
+                <img
+                    src="screenshots/lightweight.webp"
+                    alt="System Monitor showing launcher using 39 MB RAM and 3% CPU"
+                />
+            </div>
+            <div
+                class="hero-row"
+                style="margin-left: 18px; align-items: center"
+            >
+                <h2 style="margin-right: 8px">Easy Modding</h2>
+                Download and manage your mods and mod-loaders at one place!
+            </div>
+            <div class="hero-row">
+                <img
+                    class="hero-img-left"
+                    src="screenshots/mod_manage.webp"
+                    alt="Viewing list of installed mods, with buttons to manage them"
+                />
+                <img
+                    class="hero-img-left"
+                    src="screenshots/mod_store.webp"
+                    alt="Browsing the built-in mod store, options to change backends (CurseForge/Modrinth) and content (Mods/Resource Packs/Shaders/Modpacks)"
+                />
+            </div>
+
+            <!-- Downloads -->
+
+            <br />
+            <hr />
+            <br />
+            <div id="downloads" class="downloads">
+                <div class="downloads-tabs">
+                    <h2 class="downloads-heading">Downloads</h2>
+                    <button
+                        class="tablinks"
+                        onclick="openDownloadTab(event, 't-windows')"
+                    >
+                        <img
+                            src="/quantumlauncher/icons/windows.svg"
+                            class="sicon"
+                        />
+                        Windows
+                    </button>
+                    <button
+                        class="tablinks"
+                        onclick="openDownloadTab(event, 't-macOS')"
+                    >
+                        <img
+                            src="/quantumlauncher/icons/apple.svg"
+                            class="sicon"
+                        />
+                        macOS
+                    </button>
+                    <button
+                        class="tablinks"
+                        onclick="openDownloadTab(event, 't-linux')"
+                    >
+                        <img
+                            src="/quantumlauncher/icons/linux.svg"
+                            class="sicon"
+                        />
+                        Linux
+                    </button>
+                    <button
+                        class="tablinks tab-src"
+                        onclick="openDownloadTab(event, 't-src')"
+                    >
+                        <img
+                            src="/quantumlauncher/icons/github.svg"
+                            class="sicon"
+                        />
+                        Source Code
+                    </button>
+                </div>
+                <hr class="downloads-tabs" />
+                <div id="t-windows" class="tabcontent">win</div>
+                <div id="t-macOS" class="tabcontent">mac</div>
+                <div id="t-linux" class="tabcontent">lin</div>
+                <div id="t-src" class="tabcontent">src</div>
+            </div>
+        </div>
+    </body>
+</html>

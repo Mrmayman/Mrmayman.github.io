@@ -1,0 +1,73 @@
+.downloads {
+    border-radius: 8px;
+    border: 1px solid #c975c244;
+    background-color: #3a2436ee;
+    margin-left: 20px;
+    margin-right: 36px;
+    padding-left: 10px;
+}
+
+.downloads-tabs {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    gap: 2px;
+}
+
+.tablinks {
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 16px;
+    gap: 16px;
+    height: 50px;
+
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-width: 0px;
+}
+
+.tablinks:not(:hover):not(.active) {
+    background-color: #c975c244;
+}
+.tablinks:hover {
+    background-color: #c975c266;
+}
+.tablinks.active {
+    background-color: #c975c2aa;
+}
+
+.tablinks.tab-src {
+    width: 600px;
+}
+.tablinks:not(.tab-src):not(.active) {
+    width: 400px;
+}
+
+.tablinks.active:not(.tab-src) {
+    width: 450px;
+}
+.tablinks.active.tab-src {
+    width: 650px;
+}
+
+.downloads-heading {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.tabcontent {
+    display: none;
+    padding: 12px;
+}

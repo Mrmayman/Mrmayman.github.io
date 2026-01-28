@@ -1,0 +1,131 @@
+html {
+    font-family: "Inter";
+    background-color: #221920;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233a2436' fill-opacity='1.0' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    color: #ffdcf7;
+}
+
+a {
+    color: #f0aade;
+}
+
+.sicon {
+    width: 20px;
+    height: 20px;
+    filter: invert();
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+.header-row {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    align-items: center;
+
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.page {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header-logo {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-row {
+    display: flex;
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .hero-row {
+        flex-direction: column;
+    }
+}
+
+.hero-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hero-column:not(.hero-img-left) {
+    margin-left: 16px;
+}
+
+.hero-column.hero-img-left {
+    margin-left: 8px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h1:not(.header-row) {
+    margin-top: 10px;
+}
+
+.hero-row img:not(.hero-img-main):not(.hero-img-left) {
+    max-width: 500px;
+    margin-right: 102px;
+}
+
+.hero-row img.hero-img-main {
+    max-width: 600px;
+}
+
+.hero-row img.hero-img-left {
+    max-width: 480px;
+}
+
+.hero-button {
+    border: 0px solid black;
+    border-radius: 8px;
+
+    width: 190px;
+    height: 50px;
+    padding-bottom: 4px;
+
+    transition: 0.3s;
+    font-size: 20px;
+    color: white;
+
+    display: flex;
+    align-items: center;
+}
+.hero-button:not(:hover) {
+    background-color: #c975c244;
+}
+.hero-button:hover {
+    background-color: #c975c299;
+}
+
+.header-button {
+    border: 0px solid black;
+    border-radius: 8px;
+
+    transition: 0.3s;
+    font-size: 16px;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+.header-button:not(:hover) {
+    background-color: #c975c244;
+}
+.header-button:hover {
+    background-color: #c975c299;
+}
