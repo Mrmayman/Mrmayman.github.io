@@ -270,6 +270,63 @@
             </div>
 
             <div class="faqitem">
+                <h2 id="accounts-json-bug">
+                    Account not remembered after logging in
+                </h2>
+                <ul>
+                    <li>
+                        This is a launcher bug, as a workaround, run the
+                        following command in your Terminal/Command Prompt.
+                    </li>
+                    <li>
+                        After running this command, the issue will never come
+                        again.
+                    </li>
+                    <li>
+                        <h3>Windows</h3>
+                        <div class="copy-box">
+                            <pre><code id="acc-fix-windows">(Get-Content "$env:APPDATA\QuantumLauncher\config.json") `
+-replace '"accounts":null','"accounts":{}' `
+| Set-Content "$env:APPDATA\QuantumLauncher\config.json"</code></pre>
+                            <button
+                                class="copy-btn"
+                                onclick="copyCommand('acc-fix-windows', this)"
+                                title="Copy to clipboard"
+                            >
+                                <img src="icons/copy.svg" />
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>macOS</h3>
+                        <div class="copy-box">
+                            <pre><code id="acc-fix-macos">sed -i '' 's/"accounts":null/"accounts":{}/' "$HOME/Library/Application Support/QuantumLauncher/config.json"</code></pre>
+                            <button
+                                class="copy-btn"
+                                onclick="copyCommand('acc-fix-macos', this)"
+                                title="Copy to clipboard"
+                            >
+                                <img src="icons/copy.svg" />
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <h3>Linux</h3>
+                        <div class="copy-box">
+                            <pre><code id="acc-fix-linux">sed -i 's/"accounts":null/"accounts":{}/' "$HOME/.local/share/QuantumLauncher/config.json"</code></pre>
+                            <button
+                                class="copy-btn"
+                                onclick="copyCommand('acc-fix-linux', this)"
+                                title="Copy to clipboard"
+                            >
+                                <img src="icons/copy.svg" />
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="faqitem">
                 <h2 id="macos-gatekeeper">
                     macOS: "QuantumLauncher is damaged" / "cannot be opened" /
                     "eject disk image"
