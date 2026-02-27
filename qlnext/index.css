@@ -1,5 +1,6 @@
 html {
     font-family: "Inter";
+    font-weight: 300;
     background-color: #221920;
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%233a2436' fill-opacity='1.0' fill-rule='evenodd'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat;
@@ -10,14 +11,39 @@ a {
     color: #f0aade;
 }
 
+button:not(.download-priority) {
+    font-weight: 350;
+}
+
+.shadow {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+}
+
 .sicon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     filter: invert();
 }
 
 header {
     margin-bottom: 20px;
+}
+
+hr {
+    color: #ffffff11;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+sub {
+    margin-left: 6px;
 }
 
 .header-row {
@@ -112,20 +138,81 @@ h1:not(.header-row) {
 }
 
 .header-button {
+    text-decoration: none;
     border: 0px solid black;
     border-radius: 8px;
 
     transition: 0.3s;
     font-size: 16px;
     color: white;
+    font-weight: 400;
 
     display: flex;
     align-items: center;
-    padding: 8px;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 14px;
 }
-.header-button:not(:hover) {
-    background-color: #c975c244;
+.header-button:not(:hover):not(.download-priority) {
+    background-color: #c975c222;
 }
 .header-button:hover {
-    background-color: #c975c299;
+    background-color: #c975c277;
+}
+
+.header-button b {
+    margin-right: 5px;
+}
+
+/* CODE */
+
+.code-container {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid #c975c233;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    border-radius: 8px;
+    margin-top: 8px;
+}
+
+.code-container pre {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.code-copy {
+    display: flex;
+    align-items: center;
+
+    border-width: 0px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    margin-right: 10px;
+
+    padding: 8px;
+    transition: 0.2s;
+}
+.code-copy:not(:hover):not(.code-copied) {
+    background-color: #c975c233;
+}
+.code-copy:hover:not(.code-copied) {
+    background-color: #c975c255;
+}
+.code-copy.code-copied {
+    background-color: #c975c2bb;
+}
+
+.code-copy > img {
+    width: 16px;
+    height: 16px;
+    filter: invert();
 }
