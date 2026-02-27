@@ -1,165 +1,185 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Mrmayman's Website" />
+        <meta
+            name="keywords"
+            content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source"
+        />
+        <meta name="author" content="Mrmayman" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Mrmayman's Website">
-	<meta name="keywords" content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source">
-	<meta name="author" content="Mrmayman">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link
-		href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-		rel="stylesheet">
+        <!-- 100% privacy-first analytics -->
+        <script
+            async
+            src="https://scripts.simpleanalyticscdn.com/latest.js"
+        ></script>
 
-	<!-- 100% privacy-first analytics -->
-    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <title>Mrmayman's Website</title>
 
-	<title>Mrmayman's Website</title>
+        <style>
+            html {
+                background-image: url("top.jpeg");
+                background-size: cover;
+                color: #e7e6f5;
+                font-family: "Inter";
+                margin: 0;
+            }
 
-	<style>
-		html {
-			background-image: url("top.jpeg");
-			background-size: cover;
-			color: #e7e6f5;
-			font-family: "Inter";
-			margin: 0;
-		}
+            body {
+                margin: 0;
+            }
 
-		body {
-			margin: 0;
-		}
+            a {
+                color: #cfcde3;
+            }
 
-		a {
-			color: #cfcde3;
-		}
+            h1 {
+                margin-left: 20px;
+                margin: auto;
+                font-size: 40px;
+            }
 
-		h1 {
-			margin-left: 20px;
-			margin: auto;
-			font-size: 40px;
-		}
+            h2 {
+                margin-top: 0px;
+            }
 
-		h2 {
-			margin-top: 0px;
-		}
+            li {
+                padding-bottom: 10px;
+            }
 
-		li {
-			padding-bottom: 10px;
-		}
+            .para {
+                background-color: #2b3046;
+                text-align: left;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
 
-		.para {
-			background-color: #2b3046;
-			text-align: left;
-			border-radius: 8px;
-			padding: 20px;
-			margin-bottom: 20px;
-		}
+            .preview {
+                border-radius: 8px;
+                width: 100%;
+                max-width: 100%;
+                display: block;
+                margin: 50px auto;
+            }
 
-		.preview {
-			border-radius: 8px;
-			width: 100%;
-			max-width: 100%;
-			display: block;
-			margin: 50px auto;
-		}
+            .paras {
+                width: fit-content;
+                margin: auto;
+                gap: 20px;
+            }
 
-		.paras {
-			width: fit-content;
-			margin: auto;
-			gap: 20px;
-		}
+            .top {
+                padding-top: 40px;
+                padding-bottom: 20px;
+                text-align: center;
+            }
 
-		.top {
-			padding-top: 40px;
-			padding-bottom: 20px;
-			text-align: center;
-		}
+            .button {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: #a39eff;
+                color: #000000;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-bottom: 4px;
+            }
 
-		.button {
-			display: inline-block;
-			padding: 10px 20px;
-			font-size: 16px;
-			background-color: #a39eff;
-			color: #000000;
-			text-decoration: none;
-			border-radius: 5px;
-			margin-bottom: 4px;
-		}
+            .button:hover {
+                background-color: #8487e5;
+            }
 
-		.button:hover {
-			background-color: #8487e5;
-		}
+            .inter-regular {
+                font-family: "Inter", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+            }
 
-		.inter-regular {
-			font-family: "Inter", sans-serif;
-			font-optical-sizing: auto;
-			font-weight: 400;
-			font-style: normal;
-		}
+            .icon {
+                width: 16px;
+                height: auto;
+                vertical-align: middle;
+                margin-right: 8px;
+            }
 
-		.icon {
-			width: 16px;
-			height: auto;
-			vertical-align: middle;
-			margin-right: 8px;
-		}
+            .para {
+                transition: transform 0.3s ease-in-out;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
+                width: 70%;
+                margin: auto;
+                margin-bottom: 20px;
+            }
 
-		.para {
-			transition: transform 0.3s ease-in-out;
-			word-wrap: break-word;
-			overflow-wrap: break-word;
-			white-space: normal;
-			width: 70%;
-			margin: auto;
-			margin-bottom: 20px;
-		}
+            .para:hover {
+                transform: scale(1.05);
+            }
+        </style>
+    </head>
 
-		.para:hover {
-			transform: scale(1.05);
-		}
-	</style>
-</head>
+    <body>
+        <div class="top">
+            <h1>Mrmayman's website</h1>
+            <h2>
+                Hi there :3 (<a href="https://mrmayman.github.io/contact"
+                    >Contact</a
+                >)
+            </h2>
+            <br />
+            Blog coming soon :)
+        </div>
 
-<body>
-	<div class="top">
-		<h1>Mrmayman's website</h1>
-		<h2>Hi there :3 (<a href="https://mrmayman.github.io/contact">Contact</a>)</h2><br>
-		Blog coming soon :)
-	</div>
+        <div class="paras">
+            <div class="para">
+                <h2>QuantumLauncher</h2>
+                A simple Minecraft Launcher written in Rust<br />
+                Instances, Mod Store, Modpacks, and more!<br />
+                <img
+                    alt="A image showing the window of quantum launcher along with minecraft to its side"
+                    src="quantum_launcher.webp"
+                    class="preview"
+                /><br />
+                <a
+                    href="https://mrmayman.github.io/quantumlauncher"
+                    class="button"
+                    >More Info</a
+                >
+            </div>
 
-	<div class="paras">
-		<div class="para">
-			<h2>QuantumLauncher</h2>
-			A simple Minecraft Launcher written in Rust<br>
-			Instances, Mod Store, Modpacks, and more!<br>
-			<img alt="A image showing the window of quantum launcher along with minecraft to its side"
-				src="quantum_launcher.webp" class="preview"><br>
-			<a href="https://mrmayman.github.io/quantumlauncher" class="button">More Info</a>
-		</div>
+            <div class="para">
+                <h2>Minecraft2d</h2>
+                A 2D Minecraft clone made in Scratch and embedded on the web.<br />
+                This has gameplay elements like Mining, Crafting, Monsters, and
+                even the Nether!<br />
+                <b>Warning: Very broken!</b>
+                <img src="minecraft2d.png" class="preview" /><br /><br />
+                <a href="https://mrmayman.github.io/minecraft2d" class="button"
+                    >Play Minecraft2d</a
+                >
+            </div>
 
-		<div class="para">
-			<h2>Minecraft2d</h2>
-			A 2D Minecraft clone made in Scratch and embedded on the web.<br>
-			This has gameplay elements like Mining, Crafting, Monsters, and even the Nether!<br>
-			<b>Warning: Very broken!</b>
-			<img src="minecraft2d.png" class="preview"><br><br>
-			<a href="https://mrmayman.github.io/minecraft2d" class="button">Play Minecraft2d</a>
-		</div>
-
-		<div class="para">
-    		<iframe
-                src="https://discord.com/widget?id=1280474064540012619&theme=dark"
-                width="350"
-                height="500"
-                allowtransparency="true"
-                frameborder="0"
-                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-            ></iframe
-            ><br />
-		</div>
-	</div>
-</body>
-
+            <div class="para">
+                <iframe
+                    src="https://discord.com/widget?id=1280474064540012619&theme=dark"
+                    width="350"
+                    height="500"
+                    allowtransparency="true"
+                    frameborder="0"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                ></iframe
+                ><br />
+            </div>
+        </div>
+    </body>
 </html>
