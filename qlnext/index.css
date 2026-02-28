@@ -48,13 +48,29 @@ sub {
 
 .header-row {
     display: flex;
-    gap: 24px;
+    gap: 20px;
     padding-bottom: 20px;
     padding-top: 10px;
     align-items: center;
 
     margin: 0 auto;
     width: fit-content;
+}
+
+.header-row > a {
+    text-decoration: none;
+}
+
+.header-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: color 0.3s ease;
+}
+
+.header-item:hover {
+    color: #ffffff;
 }
 
 .page {
