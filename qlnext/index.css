@@ -118,7 +118,7 @@ h1:not(.header-row) {
     margin-top: 10px;
 }
 
-.hero-row img:not(.hero-img-main):not(.hero-img-left) {
+.hero-row img:not(.hero-img-main):not(.hero-img-left):not(.hero-img-main) {
     max-width: 500px;
     margin-right: 102px;
 }
@@ -129,6 +129,44 @@ h1:not(.header-row) {
 
 .hero-row img.hero-img-left {
     max-width: 480px;
+}
+
+.hero-row img.hero-img-main {
+    display: block;
+
+    max-width: 800px;
+    margin: 0px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.hero-row-vignette {
+    justify-content: center;
+}
+.hero-img-wrapper {
+    position: relative;
+    display: inline-block; /* shrink to image size */
+}
+
+.hero-img-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    border-radius: 8px; /* match image */
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.hero-img-wrapper:hover::after {
+    opacity: 0;
 }
 
 .hero-button {
