@@ -118,12 +118,12 @@ h1:not(.header-row) {
     margin-top: 10px;
 }
 
-.hero-row img:not(.hero-img-main):not(.hero-img-left):not(.hero-img-main) {
+.hero-row img:not(.hero-img-start):not(.hero-img-left):not(.hero-img-main) {
     max-width: 500px;
     margin-right: 102px;
 }
 
-.hero-row img.hero-img-main {
+.hero-row img.hero-img-start {
     max-width: 600px;
 }
 
