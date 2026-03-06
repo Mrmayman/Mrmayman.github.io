@@ -65,8 +65,8 @@ sub {
 .header-row {
     display: flex;
     gap: 20px;
+    padding: 10px;
     padding-bottom: 20px;
-    padding-top: 10px;
     align-items: center;
 
     margin: 0 auto;
@@ -100,6 +100,13 @@ sub {
     flex-direction: column;
     font-weight: 600;
     margin-right: 16px;
+}
+
+.header-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .hero-row {
@@ -151,6 +158,7 @@ h1:not(.header-row) {
 .hero-row img.hero-img-main {
     display: block;
 
+    width: 100%;
     max-width: 800px;
     margin: 0px;
     border-radius: 8px;
