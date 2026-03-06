@@ -357,36 +357,38 @@
                 <div id="downloads" class="downloads shadow">
                     <div class="downloads-tabs">
                         <div class="downloads-heading">Downloads</div>
-                        <button
-                            class="tablinks"
-                            onclick="openDownloadTab(event, 't-windows')"
-                        >
-                            <img
-                                src="/quantumlauncher/icons/windows.svg"
-                                class="sicon"
-                            />
-                            Windows
-                        </button>
-                        <button
-                            class="tablinks"
-                            onclick="openDownloadTab(event, 't-macOS')"
-                        >
-                            <img
-                                src="/quantumlauncher/icons/apple.svg"
-                                class="sicon"
-                            />
-                            macOS
-                        </button>
-                        <button
-                            class="tablinks"
-                            onclick="openDownloadTab(event, 't-linux')"
-                        >
-                            <img
-                                src="/quantumlauncher/icons/linux.svg"
-                                class="sicon"
-                            />
-                            Linux
-                        </button>
+                        <div class="downloads-tabs-inner">
+                            <button
+                                class="tablinks"
+                                onclick="openDownloadTab(event, 't-windows')"
+                            >
+                                <img
+                                    src="/quantumlauncher/icons/windows.svg"
+                                    class="sicon"
+                                />
+                                Windows
+                            </button>
+                            <button
+                                class="tablinks"
+                                onclick="openDownloadTab(event, 't-macOS')"
+                            >
+                                <img
+                                    src="/quantumlauncher/icons/apple.svg"
+                                    class="sicon"
+                                />
+                                macOS
+                            </button>
+                            <button
+                                class="tablinks"
+                                onclick="openDownloadTab(event, 't-linux')"
+                            >
+                                <img
+                                    src="/quantumlauncher/icons/linux.svg"
+                                    class="sicon"
+                                />
+                                Linux
+                            </button>
+                        </div>
                     </div>
                     <hr
                         class="downloads-tabs"
@@ -405,24 +407,31 @@
                             <sub><i>(Recommended)</i></sub>
                         </a>
                         <div style="flex: 1"></div>
-                        <button class="header-button shadow">
+                        <a
+                            href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_aarch64.zip"
+                            class="header-button shadow"
+                        >
                             <img
                                 src="/quantumlauncher/icons/download.svg"
                                 class="dicon"
                             />
                             <b>Windows</b> ARM<sub>(Snapdragon)</sub>
-                        </button>
-                        <button class="header-button shadow">
+                        </a>
+                        <a
+                            href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_i686.zip"
+                            class="header-button shadow"
+                        >
                             <img
                                 src="/quantumlauncher/icons/download.svg"
                                 class="dicon"
                             />
                             <b>Windows</b> 32-bit
-                        </button>
+                        </a>
                     </div>
                     <div id="t-macOS" class="tabcontent">
                         <div class="tbrow">
-                            <button
+                            <a
+                                href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_macos_aarch64.zip"
                                 class="download-priority header-button shadow"
                             >
                                 <img
@@ -430,14 +439,17 @@
                                     class="dicon"
                                 />
                                 <b>macOS</b> ARM <sub>(Apple M1/M2/M...)</sub>
-                            </button>
-                            <button class="header-button shadow">
+                            </a>
+                            <a
+                                href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_macos_x86_64.zip"
+                                class="header-button shadow"
+                            >
                                 <img
                                     src="/quantumlauncher/icons/download.svg"
                                     class="dicon"
                                 />
                                 <b>macOS</b> Intel <sub>(before 2020-ish)</sub>
-                            </button>
+                            </a>
                         </div>
                         <div
                             class="tbrow"
@@ -472,7 +484,8 @@
                     </div>
                     <div id="t-linux" class="tabcontent">
                         <div class="tbrow">
-                            <button
+                            <a
+                                href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_x86_64.zip"
                                 class="download-priority header-button shadow"
                             >
                                 <img
@@ -481,10 +494,13 @@
                                 />
                                 <b>Linux</b> x86_64
                                 <sub><i>(Recommended)</i></sub>
-                            </button>
+                            </a>
                             <div style="flex: 1"></div>
                             <div class="tbcol">
-                                <a class="header-button shadow">
+                                <a
+                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_aarch64.zip"
+                                    class="header-button shadow"
+                                >
                                     <img
                                         src="/quantumlauncher/icons/download.svg"
                                         class="dicon"
@@ -492,7 +508,10 @@
                                     <b>Linux</b> aarch64
                                     <sub>(Asahi/Snapdragon/Raspberry Pi)</sub>
                                 </a>
-                                <a class="header-button shadow">
+                                <a
+                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_arm32.zip"
+                                    class="header-button shadow"
+                                >
                                     <img
                                         src="/quantumlauncher/icons/download.svg"
                                         class="dicon"
