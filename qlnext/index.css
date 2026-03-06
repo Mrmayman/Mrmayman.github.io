@@ -7,6 +7,22 @@ html {
     color: #ffdcf7;
 }
 
+body {
+    margin: 0px;
+}
+
+header {
+    margin-top: 8px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column; /* column(...) */
+    width: 100%; /* width(Fill) */
+    align-items: center; /* align_x(Center) */
+    margin-bottom: 32px;
+}
+
 a {
     color: #f0aade;
 }
