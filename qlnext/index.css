@@ -34,7 +34,7 @@ hr {
 }
 
 h1 {
-    font-weight: 400;
+    font-weight: 600;
 }
 
 h2 {
@@ -75,7 +75,6 @@ sub {
 
 .page {
     max-width: 1000px;
-    width: 100%;
     margin: 0 auto;
 }
 
@@ -83,6 +82,8 @@ sub {
     font-size: 20px;
     display: flex;
     flex-direction: column;
+    font-weight: 600;
+    margin-right: 16px;
 }
 
 .hero-row {
