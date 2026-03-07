@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Quantum Launcher - A lightweight, fast, open-source Minecraft launcher, focusing on performance, simplicity and features."
+            content="Quantum Launcher - A lightweight, powerful, open-source Minecraft launcher"
         />
         <meta
             name="keywords"
-            content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source, Cracked, Free, Download, QuantumLauncher, Mrmayman, QL, Forge, Quilt, Optifine, ARM, aarch64, Linux, FOSS"
+            content="Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source, Free, Download, QuantumLauncher, Mrmayman, QL, Forge, Quilt, Optifine, ARM, aarch64, Linux, FOSS, Rust, iced"
         />
         <meta name="author" content="Mrmayman" />
 
@@ -69,651 +69,487 @@
 
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="ql.css" />
-        <link rel="stylesheet" href="topbar.css" />
-        <link rel="stylesheet" href="tabs.css" />
 
-        <title>Quantum Launcher</title>
+        <title>QuantumLauncher</title>
+
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="downloads.css" />
+        <link rel="stylesheet" href="code.css" />
 
         <script>
-            // function loadHTML(url, targetId) {
-            //     console.log("Loading Sub-Page:", url);
-            //     fetch(url)
-            //         .then((response) => {
-            //             return response.text();
-            //         })
-            //         .then((html) => {
-            //             document.getElementById(targetId).innerHTML = html;
-
-            //             requestAnimationFrame(() => {
-            //                 scrollToHash();
-            //             });
-            //         })
-            //         .catch((error) =>
-            //             console.error("Error loading HTML: ", error),
-            //         );
-            // }
-
-            // function scrollToHash() {
-            //     const hash = window.location.hash;
-            //     if (hash) {
-            //         const targetAnchor = document.querySelector(hash);
-            //         if (targetAnchor) {
-            //             targetAnchor.scrollIntoView({ behavior: 'smooth' });
-            //         }
-            //     }
-            // }
-
-            // window.onload = function () {
-            //     loadHTML("faq.html", "l-faq-page");
-            //     scrollToHash();
-            // };
-
-            // window.addEventListener('hashchange', function () {
-            //     scrollToHash();
-            // });
-
             function scrollToSection(name) {
                 document
                     .getElementById(name)
                     .scrollIntoView({ behavior: "smooth" });
             }
-        </script>
 
-        <style>
-            /* Tooltip styles for FAQ button */
-            .faq-tooltip {
-                position: relative;
-                display: inline-block;
+            // https://www.w3schools.com/howto/howto_js_tabs.asp
+            function openDownloadTab(evt, cityName) {
+                var i;
+                var tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                var tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(
+                        " active",
+                        "",
+                    );
+                }
+
+                document.getElementById(cityName).style.display = "flex";
+                evt.currentTarget.className += " active";
             }
-            .faq-tooltip .faq-tooltiptext {
-                visibility: hidden;
-                width: 180px;
-                background: #23233a;
-                color: #fff;
-                text-align: center;
-                border-radius: 6px;
-                padding: 8px 0;
-                position: absolute;
-                z-index: 10;
-                bottom: 125%;
-                left: 50%;
-                margin-left: -90px;
-                opacity: 0;
-                transition: opacity 0.2s;
-                font-size: 0.95rem;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+            function openDownloadTabByOS() {
+                const ua = navigator.userAgent.toLowerCase();
+                let targetTabId = "t-windows"; // default fallback
+
+                if (ua.includes("mac os")) {
+                    targetTabId = "t-macOS";
+                } else if (ua.includes("linux") && !ua.includes("android")) {
+                    targetTabId = "t-linux";
+                } else if (ua.includes("windows")) {
+                    targetTabId = "t-windows";
+                }
+
+                const tabButtons = document.getElementsByClassName("tablinks");
+
+                for (let btn of tabButtons) {
+                    if (
+                        btn
+                            .getAttribute("onclick")
+                            ?.includes(`'${targetTabId}'`)
+                    ) {
+                        openDownloadTab({ currentTarget: btn }, targetTabId);
+                        return;
+                    }
+                }
+
+                // absolute fallback: first tab
+                if (tabButtons.length) {
+                    openDownloadTab(
+                        { currentTarget: tabButtons[0] },
+                        "t-windows",
+                    );
+                }
             }
-            .faq-tooltip:hover .faq-tooltiptext {
-                visibility: visible;
-                opacity: 1;
-            }
-        </style>
+
+            // Run on startup
+            document.addEventListener("DOMContentLoaded", openDownloadTabByOS);
+            document.addEventListener("DOMContentLoaded", function () {
+                document
+                    .querySelectorAll(".code-container")
+                    .forEach((container) => {
+                        const button = container.querySelector(".code-copy");
+                        const code = container.querySelector("code");
+
+                        button.addEventListener("click", async () => {
+                            try {
+                                await navigator.clipboard.writeText(
+                                    code.innerText,
+                                );
+
+                                button.classList.add("code-copied");
+                                button.innerHTML =
+                                    '<img src="/quantumlauncher/icons/checkbox.svg"/>';
+
+                                setTimeout(() => {
+                                    button.innerHTML =
+                                        '<img src="/quantumlauncher/icons/copy.svg"/>';
+                                    button.classList.remove("code-copied");
+                                }, 400);
+                            } catch (err) {
+                                console.error("Failed to copy: ", err);
+                            }
+                        });
+                    });
+            });
+        </script>
     </head>
 
     <body>
-        <!-- Collapsible Top Bar -->
-        <div class="topbar-collapsed" id="topbar-collapsed">
-            <div
-                class="bar-title unselectable"
-                onclick="scrollToSection('Home')"
-                style="user-select: none; cursor: pointer"
-            >
-                <img src="favicon.ico" alt="QL Favicon" />
-                QuantumLauncher
-            </div>
-            <div class="bar-nav">
-                <button onclick="scrollToSection('Downloads')">
-                    <img
-                        src="icons/download.svg"
-                        alt="Download"
-                        class="topbar-icon"
-                    />
-                    Download
-                </button>
-                <button onclick="scrollToSection('Discord')">
-                    <img
-                        src="icons/discord.svg"
-                        alt="Discord"
-                        class="topbar-icon"
-                    />
-                    Discord
-                </button>
-                <a href="faq.html" target="_blank">
-                    <img src="icons/faq.svg" alt="FAQ" class="topbar-icon" />
-                    FAQ
-                </a>
-                <a
-                    href="https://github.com/Mrmayman/quantumlauncher"
-                    target="_blank"
-                >
-                    <img
-                        src="icons/github.svg"
-                        alt="GitHub"
-                        class="topbar-icon"
-                    />
-                    GitHub
-                </a>
-            </div>
-        </div>
-        <div class="top" id="Home">
-            <h1>Quantum Launcher</h1>
-            <h2>By <a href="/">Mrmayman</a></h2>
-        </div>
-
-        <div class="bar">
-            <div class="bar-content">
-                <h2>A simple, fast and powerful Minecraft launcher.</h2>
-                <br />
-                <button class="button" onclick="scrollToSection('Downloads')">
-                    <img src="icons/download.svg" class="icon" alt="Download" />
-                    Download
-                </button>
-                <button class="button" onclick="scrollToSection('Discord')">
-                    <img src="icons/discord.svg" class="icon" alt="Download" />
-                    Join Discord
-                </button>
-                <a class="button" href="/quantumlauncher/faq">
-                    <span class="faq-tooltip"
-                        >FAQ
-                        <span class="faq-tooltiptext"
-                            >Frequently Asked Questions</span
+        <div class="page">
+            <header>
+                <div class="header-row">
+                    <img src="favicon.ico" height="40" width="40" />
+                    <div class="header-logo">
+                        QuantumLauncher
+                        <div style="font-size: 12px">
+                            By <a href="..">Mrmayman</a>
+                        </div>
+                    </div>
+                    <div class="header-links">
+                        <a href="/quantumlauncher/faq.html">
+                            <div class="header-item">
+                                <img
+                                    src="/quantumlauncher/icons/faq.svg"
+                                    class="sicon"
+                                />
+                                FAQ
+                            </div>
+                        </a>
+                        <a href="https://discord.gg/bWqRaSXar5">
+                            <div class="header-item">
+                                <img
+                                    src="/quantumlauncher/icons/discord.svg"
+                                    class="sicon"
+                                />
+                                Discord
+                            </div>
+                        </a>
+                        <a href="https://matrix.to/#/#quantumgroup:matrix.org">
+                            <div class="header-item">
+                                <img
+                                    src="/quantumlauncher/icons/matrix.svg"
+                                    class="sicon"
+                                />
+                                Matrix
+                            </div>
+                        </a>
+                        <a href="https://github.com/Mrmayman/quantumlauncher">
+                            <div class="header-item">
+                                <img
+                                    src="/quantumlauncher/icons/github.svg"
+                                    class="sicon"
+                                />
+                                GitHub
+                            </div>
+                        </a>
+                        <button
+                            onclick="scrollToSection('downloads')"
+                            class="header-button shadow"
                         >
-                    </span>
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <div class="hero-row hero-img-main">
+                <div class="hero-column hero-img-main">
+                    <h1 style="margin-top: 16px">QuantumLauncher</h1>
+                    <div style="margin-left: 1px">
+                        A simple, powerful, open-source Minecraft launcher with
+                        instance management, modding features, and more!<br />
+                    </div>
+
+                    <button
+                        type="button"
+                        onclick="scrollToSection('downloads')"
+                        class="hero-button shadow"
+                        style="margin-top: 12px"
+                    >
+                        <img
+                            src="/quantumlauncher/icons/download.svg"
+                            width="28"
+                            height="28"
+                            style="
+                                margin-left: 16px;
+                                margin-right: 16px;
+                                filter: invert();
+                            "
+                        />
+                        Download
+                    </button>
+                </div>
+                <!--Note: Shadow in screenshot is Black, alpha 194, radius 24-->
+                <img
+                    class="hero-img-start"
+                    src="screenshots/ql.webp"
+                    alt="Main page of launcher, sidebar to select instances, and various options"
+                />
+            </div>
+            <div class="hero-row">
+                <div class="hero-column">
+                    <h2>Incredibly Lightweight</h2>
+                    <div style="margin-left: 1px">
+                        Uses minimal CPU and RAM!<br />Lighter than the vanilla
+                        launcher, common alternatives and even Task Manager!
+                    </div>
+                </div>
+                <img
+                    src="screenshots/lightweight.webp"
+                    alt="System Monitor showing launcher using 39 MB RAM and 3% CPU"
+                />
+            </div>
+            <div
+                class="hero-row"
+                style="margin-left: 20px; align-items: center"
+            >
+                <h2 style="margin-right: 8px; margin-top: 10px">
+                    Easy Modding
+                </h2>
+                Download and manage your mods and mod-loaders at one place!
+            </div>
+            <div class="hero-row">
+                <img
+                    class="hero-img-left"
+                    src="screenshots/mod_manage.webp"
+                    alt="Viewing list of installed mods, with buttons to manage them"
+                />
+                <img
+                    class="hero-img-left"
+                    src="screenshots/mod_store.webp"
+                    alt="Browsing the built-in mod store, options to change backends (CurseForge/Modrinth) and content (Mods/Resource Packs/Shaders/Modpacks)"
+                />
+            </div>
+            <br />
+            <div class="hero-row hero-row-vignette">
+                <div class="hero-img-wrapper">
+                    <img
+                        src="screenshots/rlcraft.webp"
+                        class="hero-img-main"
+                        alt="Minecraft with RLCraft modpack launched by QuantumLauncher"
+                    />
+                </div>
+            </div>
+
+            <div
+                class="header-row"
+                style="margin-top: 24px; margin-bottom: 8px"
+            >
+                <a href="/quantumlauncher/faq.html">
+                    <div class="header-item">
+                        <img
+                            src="/quantumlauncher/icons/faq.svg"
+                            class="sicon"
+                        />
+                        FAQ
+                    </div>
+                </a>
+                <a href="https://discord.gg/bWqRaSXar5">
+                    <div class="header-item">
+                        <img
+                            src="/quantumlauncher/icons/discord.svg"
+                            class="sicon"
+                        />
+                        Discord
+                    </div>
+                </a>
+                <a href="https://matrix.to/#/#quantumgroup:matrix.org">
+                    <div class="header-item">
+                        <img
+                            src="/quantumlauncher/icons/matrix.svg"
+                            class="sicon"
+                        />
+                        Matrix
+                    </div>
+                </a>
+                <a href="https://github.com/Mrmayman/quantumlauncher">
+                    <div class="header-item">
+                        <img
+                            src="/quantumlauncher/icons/github.svg"
+                            class="sicon"
+                        />
+                        GitHub
+                    </div>
                 </a>
             </div>
-            <img
-                alt="A image showing the window of quantum launcher along with Minecraft to its side"
-                src="quantum_launcher.webp"
-            />
-        </div>
 
-        <div class="bar2">
-            <div class="bar-content">
-                <h1>Incredibly lightweight.</h1>
-                <br />
-                QuantumLauncher uses <b>very</b> little CPU and RAM.<br />
-                It's designed to be fast and responsive so you can focus on what
-                you love!<br /><br />
+            <!-- Downloads -->
 
-                In fact, sometimes it's lighter than Task Manager itself!
-            </div>
-            <img
-                alt="Quantum Launcher window with task manager, showing the low resource usage"
-                src="screenshots/lightweight.webp"
-            />
-        </div>
-
-        <div class="bar">
-            <div class="bar-content">
-                <h2>Get. Set. Go!</h2>
-                A few clicks. That's all it takes to set up your ideal Minecraft
-                install<br />
-                Just create a new instance and hit play!<br /><br />
-
-                And if you want to make your experience unique, adding mods is a
-                breeze!
-            </div>
-            <img
-                alt="The new instance button being clicked"
-                src="screenshots/new.webp"
-            />
-        </div>
-
-        <div class="bar3">
-            <img
-                alt="The list of mod loaders loaders and their install buttons"
-                src="screenshots/install_loader.webp"
-                class="bar3-img1"
-            />
-            <div class="bar-content">
-                <h2>Who said modding is hard?</h2>
-                From <b>managing mod loaders</b>,<br />
-                to downloading mods from the <b>built-in store</b>,<br />
-                to even <b>packaging and sending mods</b> to your friends...<br /><br />
-                ...It's all here!
-            </div>
-            <img
-                alt="The built-in mod store"
-                src="screenshots/mod_store.webp"
-                class="bar3-img2"
-            />
-        </div>
-
-        <div class="bar4">
-            <div class="bar-content">
-                <h2>And so much more!</h2>
-                <h3>
-                    (<a href="https://github.com/Mrmayman/quantumlauncher"
-                        >It's open source too!</a
-                    >)
-                </h3>
-                <img
-                    alt="Old Minecraft versions running seamlessly"
-                    src="screenshots/old_mc.webp"
-                />
-                <img
-                    alt="A Windows 7 inspired theme showcasing the customization"
-                    src="screenshots/themes.webp"
-                />
-                <img
-                    alt="A demo of mod presets that allow you to package mods"
-                    src="screenshots/presets.webp"
-                />
-            </div>
-        </div>
-        <br />
-
-        <div class="paras">
-            <div class="para">
-                <h2>Downloads</h2>
-
-                <div id="Downloads">
-                    <div class="tab-container">
-                        <div class="tabs">
+            <div style="min-height: 360px; margin-bottom: 24px">
+                <div id="downloads" class="downloads shadow">
+                    <div class="downloads-tabs">
+                        <div class="downloads-heading">Downloads</div>
+                        <div class="downloads-tabs-inner">
                             <button
-                                class="tab-button active"
-                                data-target="windows"
+                                class="tablinks"
+                                onclick="openDownloadTab(event, 't-windows')"
                             >
                                 <img
-                                    src="icons/windows.svg"
-                                    class="icon"
-                                    alt="Windows Logo"
+                                    src="/quantumlauncher/icons/windows.svg"
+                                    class="sicon"
                                 />
                                 Windows
                             </button>
-                            <button class="tab-button" data-target="macos">
+                            <button
+                                class="tablinks"
+                                onclick="openDownloadTab(event, 't-macOS')"
+                            >
                                 <img
-                                    src="icons/apple.svg"
-                                    class="icon"
-                                    alt="macOS Logo"
+                                    src="/quantumlauncher/icons/apple.svg"
+                                    class="sicon"
                                 />
                                 macOS
                             </button>
-                            <button class="tab-button" data-target="linux">
+                            <button
+                                class="tablinks"
+                                onclick="openDownloadTab(event, 't-linux')"
+                            >
                                 <img
-                                    src="icons/linux.svg"
-                                    class="icon"
-                                    alt="Linux Logo"
+                                    src="/quantumlauncher/icons/linux.svg"
+                                    class="sicon"
                                 />
                                 Linux
                             </button>
-                            <button class="tab-button" data-target="github">
-                                <img
-                                    src="icons/github.svg"
-                                    class="icon"
-                                    alt="GitHub Logo"
-                                />
-                                Source Code
-                            </button>
                         </div>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="windows">
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_x86_64.zip"
-                                    class="button bdownload"
-                                >
-                                    <img
-                                        src="icons/windows.svg"
-                                        class="icon"
-                                        alt="Windows Logo"
-                                    />
-                                    Windows (x86_64)</a
-                                >
-                                <hr />
-                                <br />
-                                For ARM CPUs (Snapdragon / Raspberry Pi):<br />
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_aarch64.zip"
-                                    class="button bdownload"
-                                >
-                                    <img
-                                        src="icons/windows.svg"
-                                        class="icon"
-                                        alt="Windows Logo"
-                                    />
-                                    Windows <b>ARM</b> (64 bit)</a
-                                ><br />
-                                For 32 bit (<b
-                                    >extremely old) computers, like decades old
-                                    (eg: Pentium CPUs)</b
-                                ><br />
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_i686.zip"
-                                    class="button bdownload"
-                                >
-                                    <img
-                                        src="icons/windows.svg"
-                                        class="icon"
-                                        alt="Windows Logo"
-                                    />
-                                    Windows <b>32 bit</b> (x86)</a
-                                >
+                    </div>
+                    <hr
+                        class="downloads-tabs"
+                        style="margin-bottom: 4px; margin-left: 8px"
+                    />
+                    <div id="t-windows" class="tabcontent tbrow">
+                        <a
+                            href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_x86_64.zip"
+                            class="download-priority header-button button shadow"
+                        >
+                            <img
+                                src="/quantumlauncher/icons/download.svg"
+                                class="dicon"
+                            />
+                            <b>Windows</b> 64-bit
+                            <sub><i>(Recommended)</i></sub>
+                        </a>
+                        <div style="flex: 1"></div>
+                        <a
+                            href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_aarch64.zip"
+                            class="header-button shadow"
+                        >
+                            <img
+                                src="/quantumlauncher/icons/download.svg"
+                                class="dicon"
+                            />
+                            <b>Windows</b> ARM<sub>(Snapdragon)</sub>
+                        </a>
+                        <a
+                            href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_windows_i686.zip"
+                            class="header-button shadow"
+                        >
+                            <img
+                                src="/quantumlauncher/icons/download.svg"
+                                class="dicon"
+                            />
+                            <b>Windows</b> 32-bit
+                        </a>
+                    </div>
+                    <div id="t-macOS" class="tabcontent">
+                        <div class="tbrow">
+                            <a
+                                href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_macos_aarch64.zip"
+                                class="download-priority header-button shadow"
+                            >
+                                <img
+                                    src="/quantumlauncher/icons/download.svg"
+                                    class="dicon"
+                                />
+                                <b>macOS</b> ARM <sub>(Apple M1/M2/M...)</sub>
+                            </a>
+                            <a
+                                href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_macos_x86_64.zip"
+                                class="header-button shadow"
+                            >
+                                <img
+                                    src="/quantumlauncher/icons/download.svg"
+                                    class="dicon"
+                                />
+                                <b>macOS</b> Intel <sub>(before 2020-ish)</sub>
+                            </a>
+                        </div>
+                        <div
+                            class="tbrow"
+                            style="margin-left: 3px; margin-top: 8px"
+                        >
+                            <i>Not sure which one you have? Click</i>
+                            <img
+                                src="/quantumlauncher/icons/apple.svg"
+                                class="dicon"
+                            />
+                            → <b>About This Mac</b>
+                        </div>
+                        <hr />
+                        <div style="display: block">
+                            <div style="margin-left: 3px">
+                                <b>NOTE</b>: On macOS, if you have a
+                                "corrupted", "damaged" or "unverified" error,
+                                run this in the terminal: (<a
+                                    href="/quantumlauncher/faq.html#macos-gatekeeper"
+                                    >more info</a
+                                >)
                             </div>
-                            <div class="tab-pane" id="macos">
-                                <!-- macOS download button -->
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_macos_aarch64.zip"
-                                    class="button"
+                            <div class="code-container">
+                                <button
+                                    class="code-copy"
+                                    title="Copy to clipboard"
                                 >
                                     <img
-                                        src="icons/apple.svg"
-                                        class="icon"
-                                        alt="macOS Logo"
+                                        src="/quantumlauncher/icons/copy.svg"
                                     />
-                                    macOS <b>M-Series</b> (ARM)</a
-                                >
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_macos_x86_64.zip"
-                                    class="button"
-                                >
-                                    <img
-                                        src="icons/apple.svg"
-                                        class="icon"
-                                        alt="macOS Logo"
-                                    />
-                                    macOS <b>Intel</b> (x86_64)</a
-                                ><br /><br />
-                                <div class="parabox">
-                                    <img
-                                        src="icons/apple.svg"
-                                        class="icon"
-                                        alt="macOS Logo"
-                                    />
-                                    WARNING: On macOS, if you have a
-                                    QuantumLauncher is <br />
-                                    "corrupted", "damaged" or "unverified"
-                                    error, run this in the terminal:<br />
-                                    <div class="copy-box">
-                                        <pre><code id="macos-xattr-command">xattr -rc /Applications/quantum-launcher.app</code></pre>
-                                        <button
-                                            class="copy-btn"
-                                            onclick="
-                                                copyFlatpakCommand(
-                                                    'macos-xattr-command',
-                                                    this,
-                                                )
-                                            "
-                                            title="Copy to clipboard"
-                                        >
-                                            <img src="icons/copy.svg" />
-                                        </button>
-                                    </div>
-                                    <a
-                                        href="/quantumlauncher/faq.html#macos-gatekeeper"
-                                    >
-                                        More info
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="linux">
-                                <!-- Linux download button -->
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_x86_64.zip"
-                                    class="button"
-                                    style="margin-bottom: 10px"
-                                >
-                                    <img
-                                        src="icons/linux.svg"
-                                        class="icon"
-                                        alt="Linux Logo"
-                                    />
-                                    Linux (x86_64)</a
-                                ><br />
-                                <hr />
-                                <div style="margin-bottom: 10px">
-                                    For ARM CPUs (Snapdragon / Raspberry Pi /
-                                    Asahi):<br />
-                                </div>
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_aarch64.zip"
-                                    class="button"
-                                >
-                                    <img
-                                        src="icons/linux.svg"
-                                        class="icon"
-                                        alt="Linux Logo"
-                                    />
-                                    Linux <b>ARM</b> (64 bit)</a
-                                >
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_arm32.zip"
-                                    class="button"
-                                >
-                                    <img
-                                        src="icons/linux.svg"
-                                        class="icon"
-                                        alt="Linux Logo"
-                                    />
-                                    Linux <b>ARM</b> (32 bit)</a
-                                >
-                                <br /><br />
-                                <div class="parabox">
-                                    <img
-                                        src="icons/flatpak.svg"
-                                        class="icon"
-                                        alt="macOS Logo"
-                                    />
-                                    Or you can install it as a Flatpak app, by
-                                    running
-
-                                    <div class="copy-box">
-                                        <pre><code id="flatpak-command-1">flatpak remote-add quantum-launcher oci+https://mrmayman.github.io/ql-flatpak-remote/</code></pre>
-                                        <button
-                                            class="copy-btn"
-                                            onclick="
-                                                copyFlatpakCommand(
-                                                    'flatpak-command-1',
-                                                    this,
-                                                )
-                                            "
-                                            title="Copy to clipboard"
-                                        >
-                                            <img src="icons/copy.svg" />
-                                        </button>
-                                    </div>
-
-                                    <div class="copy-box">
-                                        <pre><code id="flatpak-command-2">flatpak install io.github.Mrmayman.QuantumLauncher</code></pre>
-                                        <button
-                                            class="copy-btn"
-                                            onclick="
-                                                copyFlatpakCommand(
-                                                    'flatpak-command-2',
-                                                    this,
-                                                )
-                                            "
-                                            title="Copy to clipboard"
-                                        >
-                                            <img src="icons/copy.svg" />
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="github">
-                                Proudly open source under
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher/blob/main/LICENSE"
-                                    >GNU General Public License v3</a
-                                ><br /><br />
-
-                                Note: This is for viewing the code that powers
-                                the launcher.<br />
-                                If you just want to play, select the other
-                                options.<br /><br />
-
-                                <a
-                                    href="https://github.com/Mrmayman/quantumlauncher"
-                                    class="button"
-                                >
-                                    <img
-                                        src="icons/github.svg"
-                                        class="icon"
-                                        alt="Github Logo"
-                                    />
-                                    Source Code</a
-                                >
+                                </button>
+                                <pre><code>xattr -rc /Applications/quantum-launcher.app</code></pre>
                             </div>
                         </div>
                     </div>
+                    <div id="t-linux" class="tabcontent">
+                        <div class="tbrow">
+                            <a
+                                href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_x86_64.zip"
+                                class="download-priority header-button shadow"
+                            >
+                                <img
+                                    src="/quantumlauncher/icons/download.svg"
+                                    class="dicon"
+                                />
+                                <b>Linux</b> x86_64
+                                <sub><i>(Recommended)</i></sub>
+                            </a>
+                            <div style="flex: 1"></div>
+                            <div class="tbcol">
+                                <a
+                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_aarch64.zip"
+                                    class="header-button shadow"
+                                >
+                                    <img
+                                        src="/quantumlauncher/icons/download.svg"
+                                        class="dicon"
+                                    />
+                                    <b>Linux</b> aarch64
+                                    <sub>(Asahi/Snapdragon/Raspberry Pi)</sub>
+                                </a>
+                                <a
+                                    href="https://github.com/Mrmayman/quantumlauncher/releases/download/v0.5.0/quantum_launcher_linux_arm32.zip"
+                                    class="header-button shadow"
+                                >
+                                    <img
+                                        src="/quantumlauncher/icons/download.svg"
+                                        class="dicon"
+                                    />
+                                    <b>Linux</b>
+                                    armv7h 32-bit <sub>(old Raspberry Pi)</sub>
+                                </a>
+                            </div>
+                        </div>
+                        Or install it as a flatpak
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
+                            </button>
+                            <pre><code>flatpak remote-add quantum-launcher oci+https://mrmayman.github.io/ql-flatpak-remote/
+flatpak install io.github.Mrmayman.QuantumLauncher</code></pre>
+                        </div>
+                        Or as a Fedora COPR
+                        <div class="code-container" style="margin-top: 0px">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
+                            </button>
+                            <pre><code>sudo dnf copr enable apicalshark/quantum-launcher-rpm
+sudo dnf in quantum-launcher</code></pre>
+                        </div>
+                    </div>
                 </div>
-                <br />
-                <div id="Discord"></div>
-            </div>
-
-            <div class="para">
-                <iframe
-                    src="https://discord.com/widget?id=1280474064540012619&theme=dark"
-                    width="350"
-                    height="500"
-                    allowtransparency="true"
-                    frameborder="0"
-                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-                ></iframe
-                ><br />
             </div>
         </div>
-
-        <img
-            alt="A image showing the window of quantum launcher along with minecraft to its side"
-            src="quantum_launcher.webp"
-            class="preview"
-        />
-
-        <!-- <div id="l-faq-page"></div> -->
-
-        <div class="paras">
-            <div class="para">
-                Proudly
-                <a href="https://github.com/Mrmayman/quantumlauncher"
-                    >open source</a
+        <footer>
+            <p>Not affiliated with Microsoft or Mojang</p>
+            <p style="margin: 0px">© 2026 Mrmayman & Contributors</p>
+            <p style="margin: 0px; font-size: 14px">
+                Proudly Licensed under
+                <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+                    >GNU GPL v3</a
                 >
-                under
-                <a
-                    href="https://github.com/Mrmayman/quantumlauncher/blob/main/LICENSE"
-                    >GNU General Public License v3</a
-                >. <br />
-                <a
-                    href="https://commons.wikimedia.org/wiki/File:Flatpak_Logo.svg"
-                >
-                    Flatpak logo from Wikimedia </a
-                ><br />
-
-                <a href="/contact">Contact Me</a>
-            </div>
-        </div>
-
-        <script>
-            // Collapsible Top Bar logic
-            (function () {
-                const topbar = document.getElementById("topbar-collapsed");
-                let lastScrollY = window.scrollY;
-                function onScroll() {
-                    if (window.scrollY > 80) {
-                        topbar.classList.add("visible");
-                    } else {
-                        topbar.classList.remove("visible");
-                    }
-                }
-                window.addEventListener("scroll", onScroll);
-            })();
-            // scrollToSection function (already present, but ensure global)
-            function scrollToSection(name) {
-                const el = document.getElementById(name);
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-            }
-
-            // Function to detect operating system from user agent
-            function detectOS() {
-                const userAgent = navigator.userAgent.toLowerCase();
-
-                if (userAgent.includes("win")) {
-                    return "windows";
-                } else if (userAgent.includes("mac")) {
-                    return "macos";
-                } else if (userAgent.includes("linux")) {
-                    return "linux";
-                } else {
-                    return "windows"; // Default fallback
-                }
-            }
-
-            // Function to switch to a specific tab
-            function switchToTab(targetOS) {
-                const tabButtons = document.querySelectorAll(".tab-button");
-                const tabPanes = document.querySelectorAll(".tab-pane");
-
-                // Deactivate all buttons and panes
-                tabButtons.forEach((btn) => btn.classList.remove("active"));
-                tabPanes.forEach((pane) => pane.classList.remove("active"));
-
-                // Activate the target button
-                const targetButton = document.querySelector(
-                    `[data-target="${targetOS}"]`,
-                );
-                if (targetButton) {
-                    targetButton.classList.add("active");
-                }
-
-                // Activate the target pane
-                const targetPane = document.getElementById(targetOS);
-                if (targetPane) {
-                    targetPane.classList.add("active");
-                }
-            }
-
-            document.addEventListener("DOMContentLoaded", function () {
-                const tabButtons = document.querySelectorAll(".tab-button");
-                const tabPanes = document.querySelectorAll(".tab-pane");
-
-                // Auto-switch to detected OS tab on page load
-                const detectedOS = detectOS();
-                switchToTab(detectedOS);
-
-                tabButtons.forEach((button) => {
-                    button.addEventListener("click", function () {
-                        // Deactivate all buttons and panes
-                        tabButtons.forEach((btn) =>
-                            btn.classList.remove("active"),
-                        );
-                        tabPanes.forEach((pane) =>
-                            pane.classList.remove("active"),
-                        );
-
-                        // Activate the clicked button
-                        this.classList.add("active");
-
-                        // Activate the corresponding pane
-                        const target = this.getAttribute("data-target");
-                        const pane = document.getElementById(target);
-                        if (pane) {
-                            pane.classList.add("active");
-                        }
-                    });
-                });
-            });
-
-            function copyFlatpakCommand(id, btn) {
-                const code = document.getElementById(id).innerText;
-                navigator.clipboard.writeText(code);
-
-                btn.classList.add("copied");
-                btn.innerHTML = `
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <polyline points="20 6 9 17 4 12" style="stroke:#3d2b46;stroke-width:3;fill:none"/>
-                </svg>
-              `;
-
-                setTimeout(() => {
-                    btn.classList.remove("copied");
-                    btn.innerHTML = `
-                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                `;
-                }, 1200);
-            }
-        </script>
+            </p>
+        </footer>
     </body>
 </html>
