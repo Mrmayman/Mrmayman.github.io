@@ -7,11 +7,12 @@
             rgba(0, 0, 0, 0.2) 100%);
     border-radius: 8px;
     margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .code-container pre {
     margin-top: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }

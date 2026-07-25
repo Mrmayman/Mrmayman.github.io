@@ -547,6 +547,88 @@ Icon=/path/to/icon.ico</code></pre>
 
             <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
+                <h2 id="out-of-stack-vulkan">
+                    <img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
+                    Out of stack space / unable to create new native thread
+                </h2>
+                <ul>
+                    <li>
+                        This can happen when using Vulkan renderer mods (such as
+                        <b>VulkanMod</b>) together with NVIDIA proprietary drivers.
+                    </li>
+                    <li>
+                        Add the following Java argument to your instance:
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
+                            </button>
+                            <pre><code>-Dorg.lwjgl.system.stackSize=256</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        This reduces the native thread stack size, preventing the launcher
+                        from running out of native stack space.
+                    </li>
+                </ul>
+            </div>
+
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
+            <div class="faqitem">
+                <h2 id="launcher-opengl">
+                    <img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
+                    Launcher won't open / LLVM error on Windows
+                </h2>
+                <ul>
+                    <li>
+                        If the launcher does nothing when opened, gets stuck at
+                        <code>Starting up the launcher...</code>, or shows an LLVM
+                        error (eg: <code>error: Invalid record (Producer: 'LLVM3.8.0' Reader: 'LLVM 3.8.0')</code>),
+                        try forcing the OpenGL backend.
+                    </li>
+                    <li>
+                        Create <code>qldir.txt</code> inside your
+                        <code>QuantumLauncher/</code> folder with the following contents:
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
+                            </button>
+                            <pre><code>.
+i_opengl</code></pre>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
+            <div class="faqitem">
+                <h2 id="wayland-window-icon">
+                    <img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
+                    GLFW error 65548 on Wayland (Minecraft 1.18.2)
+                </h2>
+                <ul>
+                    <li>
+                        If Minecraft crashes with
+                        <code>GLFW error 65548: Wayland: The platform does not support setting the window icon</code>,
+                        force the game to use X11 instead of Wayland.
+                    </li>
+                    <li>
+                        Add the following environment variable to your instance:
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
+                            </button>
+                            <pre><code>XDG_SESSION_TYPE=x11</code></pre>
+                        </div>
+                    </li>
+                    <li>
+                        This runs the game through XWayland, avoiding the Wayland GLFW
+                        limitation.
+                    </li>
+                </ul>
+            </div>
+
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
+            <div class="faqitem">
                 <h2 id="keyring-not-installed"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
                     (<i>linux</i>): microsoft account error: keyring error:
                     Platform secure storage failure: DBus error: The name is not
@@ -575,26 +657,7 @@ Icon=/path/to/icon.ico</code></pre>
                 </ul>
             </div>
 
-            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
-            <div class="faqitem">
-                <h2 id="keyring-error"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
-                    (<i>linux</i>) microsoft account error: keyring error:
-                    Couldn't access platform secure storage: Secret Service: no
-                    result found
-                </h2>
-                <ul>
-                    <li>
-                        Try running <code>seahorse</code> (install it if it's
-                        not there)
-                    </li>
-                    <li>
-                        In the left sidebar, click the + button then click
-                        Password Keyring
-                    </li>
-                    <li>Name it "Login" and set whatever password you want</li>
-                </ul>
             </div>
-                </div>
             </div>
         </div>
         <footer>
