@@ -68,51 +68,11 @@
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
         <link rel="stylesheet" href="faq-ql.css" />
         <link rel="stylesheet" href="faq-topbar.css" />
+        <link rel="stylesheet" href="code.css" />
 
         <title>FAQ: Quantum Launcher</title>
 
-        <script>
-            // function loadHTML(url, targetId) {
-            //     console.log("Loading Sub-Page:", url);
-            //     fetch(url)
-            //         .then((response) => {
-            //             return response.text();
-            //         })
-            //         .then((html) => {
-            //             document.getElementById(targetId).innerHTML = html;
-
-            //             requestAnimationFrame(() => {
-            //                 scrollToHash();
-            //             });
-            //         })
-            //         .catch((error) =>
-            //             console.error("Error loading HTML: ", error),
-            //         );
-            // }
-
-            // function scrollToHash() {
-            //     const hash = window.location.hash;
-            //     if (hash) {
-            //         const targetAnchor = document.querySelector(hash);
-            //         if (targetAnchor) {
-            //             targetAnchor.scrollIntoView({ behavior: 'smooth' });
-            //         }
-            //     }
-            // }
-
-            // window.onload = function () {
-            //     loadHTML("faq.html", "l-faq-page");
-            //     scrollToHash();
-            // };
-
-            // window.addEventListener('hashchange', function () {
-            //     scrollToHash();
-            // });
-
-            // function scrollToSection(name) {
-            //     document.getElementById(name).scrollIntoView({ behavior: "smooth" });
-            // }
-        </script>
+        <script src="/quantumlauncher/code.js"></script>
     </head>
 
     <body>
@@ -165,6 +125,12 @@
 
         <div class="faq">
             <div class="faqitem">
+                <h2>WARNING</h2>
+                <p style="margin-left: 20px;">Before you try anything here, make sure your launcher is up to date.<br>
+                Most of the time that should fix any issues you're having.</p>
+            </div>
+
+            <div class="faqitem">
                 <h2 id="files-location">Where are the files?</h2>
                 <ul>
                     <li>
@@ -175,75 +141,51 @@
                     <br />
                     <li>
                         On <b>Windows</b>, launcher files are at
-                        <div class="copy-box">
-                            <pre><code id="faq-path-windows">C:/Users/YOUR_USERNAME/AppData/Roaming/QuantumLauncher/</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="copyCommand('faq-path-windows', this)"
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
+                            <pre><code>C:/Users/YOUR_USERNAME/AppData/Roaming/QuantumLauncher/</code></pre>
                         </div>
                         You probably won't see the AppData folder.<br />
                         Press Windows + R and paste this path, and hit enter.
                     </li>
                     <li>
                         On <b>Linux</b>, the launcher files are at
-                        <div class="copy-box">
-                            <pre><code id="faq-path-linux">~/.config/QuantumLauncher/</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="copyCommand('faq-path-linux', this)"
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
+                            <pre><code>~/.config/QuantumLauncher/</code></pre>
                         </div>
                         (~ refers to your home directory).
                     </li>
                     <li>
                         On <b>Mac</b>, the launcher files are at
-                        <div class="copy-box">
-                            <pre><code id="faq-path-mac">~/Library/Application Support/QuantumLauncher/</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="copyCommand('faq-path-mac', this)"
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
+                            <pre><code>~/Library/Application Support/QuantumLauncher/</code></pre>
                         </div>
                     </li>
                     <br />
                     <li>
                         Instances are located at
-                        <div class="copy-box">
-                            <pre><code id="faq-path-instances">QuantumLauncher/instances/YOUR_INSTANCE/</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="
-                                    copyCommand('faq-path-instances', this)
-                                "
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
+                            <pre><code>QuantumLauncher/instances/YOUR_INSTANCE/</code></pre>
                         </div>
                     </li>
                     <li>
                         .minecraft folder is located at
-                        <div class="copy-box">
-                            <pre><code id="faq-path-minecraft">YOUR_INSTANCE/.minecraft/</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="
-                                    copyCommand('faq-path-minecraft', this)
-                                "
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
+                            <pre><code>YOUR_INSTANCE/.minecraft/</code></pre>
                         </div>
                     </li>
                 </ul>
@@ -270,80 +212,17 @@
             </div>
 
             <div class="faqitem">
-                <h2 id="accounts-json-bug">
-                    Account not remembered after logging in
-                </h2>
-                <ul>
-                    <li>
-                        This is a launcher bug, as a workaround, run the
-                        following command in your Terminal/Command Prompt.
-                    </li>
-                    <li>
-                        After running this command, the issue will never come
-                        again.
-                    </li>
-                    <li>
-                        <h3>Windows</h3>
-                        <div class="copy-box">
-                            <pre><code id="acc-fix-windows">(Get-Content "$env:APPDATA\QuantumLauncher\config.json") `
--replace '"accounts":null','"accounts":{}' `
-| Set-Content "$env:APPDATA\QuantumLauncher\config.json"</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="copyCommand('acc-fix-windows', this)"
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
-                            </button>
-                        </div>
-                    </li>
-                    <li>
-                        <h3>macOS</h3>
-                        <div class="copy-box">
-                            <pre><code id="acc-fix-macos">sed -i '' 's/"accounts":null/"accounts":{}/' "$HOME/Library/Application Support/QuantumLauncher/config.json"</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="copyCommand('acc-fix-macos', this)"
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
-                            </button>
-                        </div>
-                    </li>
-                    <li>
-                        <h3>Linux</h3>
-                        <div class="copy-box">
-                            <pre><code id="acc-fix-linux">sed -i 's/"accounts":null/"accounts":{}/' "$HOME/.local/share/QuantumLauncher/config.json"</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="copyCommand('acc-fix-linux', this)"
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
-                            </button>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="faqitem">
                 <h2 id="macos-gatekeeper">
                     macOS: "QuantumLauncher is damaged" / "cannot be opened" /
                     "eject disk image"
                 </h2>
                 <ul>
                     As a temporary workaround, run this in the terminal:<br />
-                    <div class="copy-box">
-                        <pre><code id="faq-macos-xattr-command">xattr -rc /Applications/quantum-launcher.app</code></pre>
-                        <button
-                            class="copy-btn"
-                            onclick="
-                                copyCommand('faq-macos-xattr-command', this)
-                            "
-                            title="Copy to clipboard"
-                        >
-                            <img src="icons/copy.svg" />
+                    <div class="code-container">
+                        <button class="code-copy" title="Copy to clipboard">
+                            <img src="/quantumlauncher/icons/copy.svg" />
                         </button>
+                        <pre><code>xattr -rc /Applications/quantum-launcher.app</code></pre>
                     </div>
                     Apple being a greedy company, demands a "Developer Id" fee
                     from me, that I can't afford. If I don't pay, they
@@ -414,8 +293,11 @@
                         Create a quantumlauncher.desktop file. Type in the
                         following thing:
 
-                        <div class="copy-box">
-                            <pre><code id="faq-linux-desktop-file">[Desktop Entry]
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
+                            </button>
+                            <pre><code>[Desktop Entry]
 Encoding=UTF-8
 Version=1.5
 Type=Application
@@ -426,15 +308,6 @@ Categories=Game;
 Exec=/path/to/quantum_launcher
 PrefersNonDefaultGPU=true
 Icon=/path/to/icon.ico</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="
-                                    copyCommand('faq-linux-desktop-file', this)
-                                "
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
-                            </button>
                         </div>
                     </li>
                     <li>
@@ -469,55 +342,31 @@ Icon=/path/to/icon.ico</code></pre>
                             </li>
                             <li>
                                 Running the command:
-                                <div class="copy-box">
-                                    <pre><code id="faq-linux-chmod">chmod +x ~/.local/share/applications/quantumlauncher.desktop</code></pre>
-                                    <button
-                                        class="copy-btn"
-                                        onclick="
-                                            copyCommand('faq-linux-chmod', this)
-                                        "
-                                        title="Copy to clipboard"
-                                    >
-                                        <img src="icons/copy.svg" />
+                                <div class="code-container">
+                                    <button class="code-copy" title="Copy to clipboard">
+                                        <img src="/quantumlauncher/icons/copy.svg" />
                                     </button>
+                                    <pre><code>chmod +x ~/.local/share/applications/quantumlauncher.desktop</code></pre>
                                 </div>
                                 (replace with the path to the desktop file)
                             </li>
                             <li>
                                 Running the command:
-                                <div class="copy-box">
-                                    <pre><code id="faq-linux-validate">desktop-file-validate ~/.local/share/applications/quantumlauncher.desktop</code></pre>
-                                    <button
-                                        class="copy-btn"
-                                        onclick="
-                                            copyCommand(
-                                                'faq-linux-validate',
-                                                this,
-                                            )
-                                        "
-                                        title="Copy to clipboard"
-                                    >
-                                        <img src="icons/copy.svg" />
+                                <div class="code-container">
+                                    <button class="code-copy" title="Copy to clipboard">
+                                        <img src="/quantumlauncher/icons/copy.svg" />
                                     </button>
+                                    <pre><code>desktop-file-validate ~/.local/share/applications/quantumlauncher.desktop</code></pre>
                                 </div>
                                 (replace with the path to the desktop file)
                             </li>
                             <li>
                                 Running the command:
-                                <div class="copy-box">
-                                    <pre><code id="faq-linux-update">update-desktop-database ~/.local/share/applications</code></pre>
-                                    <button
-                                        class="copy-btn"
-                                        onclick="
-                                            copyCommand(
-                                                'faq-linux-update',
-                                                this,
-                                            )
-                                        "
-                                        title="Copy to clipboard"
-                                    >
-                                        <img src="icons/copy.svg" />
+                                <div class="code-container">
+                                    <button class="code-copy" title="Copy to clipboard">
+                                        <img src="/quantumlauncher/icons/copy.svg" />
                                     </button>
+                                    <pre><code>update-desktop-database ~/.local/share/applications</code></pre>
                                 </div>
                                 (replace with the folder containing the desktop
                                 file)
@@ -595,17 +444,11 @@ Icon=/path/to/icon.ico</code></pre>
                     </li>
                     <li>
                         Then open command prompt or terminal and type
-                        <div class="copy-box">
-                            <pre><code id="faq-windows-mklink">mklink /D "%APPDATA%\Roaming\QuantumLauncher" "E:\Path\To\Link"</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="
-                                    copyCommand('faq-windows-mklink', this)
-                                "
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
+                            <pre><code>mklink /D "%APPDATA%\Roaming\QuantumLauncher" "E:\Path\To\Link"</code></pre>
                         </div>
                         where <b>E:\Path\To\Link</b> is changed to wherever your
                         folder is on the other drive
@@ -625,17 +468,12 @@ Icon=/path/to/icon.ico</code></pre>
                         <code>libsecret</code> (the package name might vary
                         based on distro, try searching it)<br />
                         Then try
-                        <div class="copy-box">
-                            <pre><code id="faq-linux-keyring-eval">eval $(/usr/bin/gnome-keyring-daemon --start)</code></pre>
-                            <button
-                                class="copy-btn"
-                                onclick="
-                                    copyCommand('faq-linux-keyring-eval', this)
-                                "
-                                title="Copy to clipboard"
-                            >
-                                <img src="icons/copy.svg" />
+
+                        <div class="code-container">
+                            <button class="code-copy" title="Copy to clipboard">
+                                <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
+                            <pre><code>eval $(/usr/bin/gnome-keyring-daemon --start)</code></pre>
                         </div>
                     </li>
                     <li>
@@ -696,28 +534,6 @@ Icon=/path/to/icon.ico</code></pre>
                 }
                 window.addEventListener("scroll", onScroll);
             })();
-
-            function copyCommand(id, btn) {
-                const code = document.getElementById(id).innerText;
-                navigator.clipboard.writeText(code);
-
-                btn.classList.add("copied");
-                btn.innerHTML = `
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <polyline points="20 6 9 17 4 12" style="stroke:#3d2b46;stroke-width:3;fill:none"/>
-                </svg>
-              `;
-
-                setTimeout(() => {
-                    btn.classList.remove("copied");
-                    btn.innerHTML = `
-                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                  </svg>
-                `;
-                }, 1200);
-            }
         </script>
     </body>
 </html>
