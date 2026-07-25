@@ -5,26 +5,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="Frequently Asked Questions: Quantum Launcher"
+            content="QuantumLauncher FAQ - Get answers to common questions about installation, mods, shaders, file locations, macOS issues, Linux setup, and troubleshooting. Learn how to fix errors and optimize your Minecraft launcher experience."
         />
         <meta
             name="keywords"
-            content="Frequently Asked Questions, FAQ, File Location, AppData, .minecraft, damaged, invalid session, Mods, Location, Shaders, Error, Connection, Session, Keyring, Minecraft, Launcher, Quantum Launcher, Java, Fabric, Open Source, Cracked, Free, Download, QuantumLauncher, Mrmayman, QL, Forge, Quilt, Optifine, ARM, aarch64, Linux, FOSS"
+            content="QuantumLauncher FAQ, Minecraft launcher help, installation guide, mod installation, shader setup, file location, macOS gatekeeper fix, Linux desktop shortcut, connection timeout, invalid session, keyring error, Minecraft mods, Fabric, Forge, troubleshooting, Quantum Launcher support"
         />
         <meta name="author" content="Mrmayman" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://mrmayman.github.io/quantumlauncher/faq.html" />
 
         <!-- Open Graph / Facebook -->
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta
             property="og:url"
-            content="https://mrmayman.github.io/quantumlauncher/faq"
+            content="https://mrmayman.github.io/quantumlauncher/faq.html"
         />
         <meta
             property="og:title"
-            content="mrmayman.github.io/quantumlauncher/faq"
+            content="QuantumLauncher FAQ - Help & Troubleshooting"
         />
-        <meta property="og:description" content="FAQ for QuantumLauncher" />
+        <meta property="og:description" content="Get answers to common questions about QuantumLauncher - installation, mods, shaders, file locations, and troubleshooting guides." />
         <meta
             property="og:image"
             content="http://mrmayman.github.io/quantumlauncher/quantum_launcher.webp"
@@ -34,15 +37,15 @@
         <meta property="twitter:card" content="summary_large_image" />
         <meta
             property="twitter:url"
-            content="https://mrmayman.github.io/quantumlauncher/faq"
+            content="https://mrmayman.github.io/quantumlauncher/faq.html"
         />
         <meta
             property="twitter:title"
-            content="mrmayman.github.io/quantumlauncher/faq"
+            content="QuantumLauncher FAQ - Help & Troubleshooting"
         />
         <meta
             property="twitter:description"
-            content="FAQ for QuantumLauncher"
+            content="Get answers to common questions about QuantumLauncher - installation, mods, shaders, file locations, and troubleshooting guides."
         />
         <meta
             property="twitter:image"
@@ -66,72 +69,149 @@
 
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" href="faq-ql.css" />
-        <link rel="stylesheet" href="faq-topbar.css" />
+        <link rel="stylesheet" href="index.css" />
+        <link rel="stylesheet" href="downloads.css" />
         <link rel="stylesheet" href="code.css" />
 
-        <title>FAQ: Quantum Launcher</title>
+        <title>QuantumLauncher FAQ - Help & Troubleshooting Guide</title>
 
         <script src="/quantumlauncher/code.js"></script>
+
+        <!-- FAQ Structured Data for SEO -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Where are the files?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "On Windows, launcher files are at C:/Users/YOUR_USERNAME/AppData/Roaming/QuantumLauncher/. On Linux, the launcher files are at ~/.config/QuantumLauncher/. On Mac, the launcher files are at ~/Library/Application Support/QuantumLauncher/. Instances are located at QuantumLauncher/instances/YOUR_INSTANCE/ and .minecraft folder is at YOUR_INSTANCE/.minecraft/."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I install mods?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Select your instance and click on the 'Mods' button, then install a loader (Fabric recommended, Forge, or other loaders). After that, click on 'Download mods' and browse through the store to find mods you want to install. You can also install mods manually by clicking on 'Go to Mods Folder' button and pasting the mods in there."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "macOS: QuantumLauncher is damaged / cannot be opened",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Run this terminal command: xattr -rc /Applications/quantum-launcher.app. This bypasses Apple's Gatekeeper blocking for unsigned apps."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I install shaders?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Select your instance and click on 'Mods', then install Fabric. Download Iris, Sodium, Fabric API, and Mod Menu. Download your desired shader and paste it in the shaderpacks folder in the Files section."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How do I change skins?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Use the CustomSkinLoader mod. Install Fabric or Forge, then download CustomSkinLoader from the mod store. Configure it in-game, preferably with an ElyBy account."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Connection timed out: No further information",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Try allowing Minecraft through your firewall. Make sure you have a stable internet connection. If using a VPN, try disabling it. Ensure the launcher is allowed to connect to the internet and properly configured for any proxy settings."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Invalid Session",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "This means the server needs a paid Minecraft account. If you know the host, tell them to set online-mode to false in server.properties (warning: this makes the server vulnerable to hackers)."
+                    }
+                }
+            ]
+        }
+        </script>
     </head>
 
     <body>
-        <!-- Collapsible Top Bar -->
-        <div class="topbar-collapsed" id="topbar-collapsed">
-            <div
-                class="bar-title unselectable"
-                onclick="window.location.href = '/quantumlauncher'"
-                style="user-select: none; cursor: pointer"
-            >
-                <img src="favicon.ico" alt="QL Favicon" />
-                QuantumLauncher
-            </div>
-            <div class="bar-nav">
-                <a href="/quantumlauncher/#Downloads">
-                    <img
-                        src="icons/download.svg"
-                        alt="Download"
-                        class="topbar-icon"
-                    />
-                    Download
-                </a>
-                <a href="/quantumlauncher/#Discord">
-                    <img
-                        src="icons/discord.svg"
-                        alt="Discord"
-                        class="topbar-icon"
-                    />
-                    Discord
-                </a>
-                <a
-                    href="https://github.com/Mrmayman/quantumlauncher"
-                    target="_blank"
-                >
-                    <img
-                        src="icons/github.svg"
-                        alt="GitHub"
-                        class="topbar-icon"
-                    />
-                    GitHub
-                </a>
-            </div>
-        </div>
-        <div class="top">
-            <h1>
-                <a href="/quantumlauncher">QuantumLauncher</a>: FAQ (Frequently
-                asked questions)
-            </h1>
-        </div>
+        <div class="page">
+            <header>
+                <div class="header-row">
+                    <img src="favicon.ico" height="40" width="40" />
+                    <div class="header-logo" style="cursor: pointer;" onclick="window.location.href='/quantumlauncher'">
+                        QuantumLauncher
+                        <div style="font-size: 12px">
+                            By <a href="..">Mrmayman</a>
+                        </div>
+                    </div>
+                    <div class="header-links">
+                        <a href="https://discord.gg/bWqRaSXar5">
+                            <div class="header-item">
+                                <img
+                                    src="/quantumlauncher/icons/discord.svg"
+                                    class="sicon"
+                                />
+                                Discord
+                            </div>
+                        </a>
+                        <a href="https://matrix.to/#/#quantumgroup:matrix.org">
+                            <div class="header-item">
+                                <img
+                                    src="/quantumlauncher/icons/matrix.svg"
+                                    class="sicon"
+                                />
+                                Matrix
+                            </div>
+                        </a>
+                        <a href="https://github.com/Mrmayman/quantumlauncher">
+                            <div class="header-item">
+                                <img
+                                    src="/quantumlauncher/icons/github.svg"
+                                    class="sicon"
+                                />
+                                GitHub
+                            </div>
+                        </a>
+                        <button
+                            onclick="window.location.href='/quantumlauncher/#downloads'"
+                            class="header-button shadow"
+                        >
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </header>
 
-        <div class="faq">
+            <h1 style="margin-top: 16px; margin-left: 20px;">FAQ</h1>
+            <div style="margin-left: 20px;">
+                Frequently Asked Questions for QuantumLauncher
+                <span style="font-size: 14px; margin-left: 8px;">
+                    <a href="/quantumlauncher" style="opacity: 0.8;">← Back to main page</a>
+                </span>
+            </div>
+
+            <div class="downloads shadow" style="margin-top: 24px">
+            <div style="padding-left: 10px; padding-right: 12px; padding-top: 24px; padding-bottom: 20px;">
             <div class="faqitem">
-                <h2>WARNING</h2>
+                <h2><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />WARNING</h2>
                 <p style="margin-left: 20px;">Before you try anything here, make sure your launcher is up to date.<br>
                 Most of the time that should fix any issues you're having.</p>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="files-location">Where are the files?</h2>
+                <h2 id="files-location"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />Where are the files?</h2>
                 <ul>
                     <li>
                         You can open the instance's <b>.minecraft</b>
@@ -191,8 +271,9 @@
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="install-mods">How do I install mods?</h2>
+                <h2 id="install-mods"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />How do I install mods?</h2>
                 <ul>
                     <li>
                         Select your instance and click on the "Mods" button,
@@ -211,8 +292,9 @@
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="macos-gatekeeper">
+                <h2 id="macos-gatekeeper"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
                     macOS: "QuantumLauncher is damaged" / "cannot be opened" /
                     "eject disk image"
                 </h2>
@@ -231,8 +313,9 @@
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="install-shaders">How do I install shaders?</h2>
+                <h2 id="install-shaders"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />How do I install shaders?</h2>
                 <ul>
                     <li>
                         Select your instance and click on the "Mods" button,
@@ -263,8 +346,9 @@
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="change-skins">How do I change skins?</h2>
+                <h2 id="change-skins"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />How do I change skins?</h2>
                 <ul>
                     <li>
                         Use the customskinloader mod. Go to "Mods" and if you
@@ -283,8 +367,9 @@
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="linux-desktop-file">
+                <h2 id="linux-desktop-file"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
                     How do I change the icon/create a shortcut of the launcher
                     on Linux?
                 </h2>
@@ -376,8 +461,9 @@ Icon=/path/to/icon.ico</code></pre>
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="connection-timed-out">
+                <h2 id="connection-timed-out"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
                     "Connection timed out: No further information"
                 </h2>
                 <ul>
@@ -399,8 +485,9 @@ Icon=/path/to/icon.ico</code></pre>
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="invalid-session">Invalid Session</h2>
+                <h2 id="invalid-session"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />Invalid Session</h2>
                 <ul>
                     <li>
                         This means that the server needs a paid Minecraft
@@ -415,9 +502,10 @@ Icon=/path/to/icon.ico</code></pre>
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
                 <h2>
-                    Mod ___ ___ requires version ___ or later of (some mod),
+                    <img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />Mod ___ ___ requires version ___ or later of (some mod),
                     which is missing
                 </h2>
                 <ul>
@@ -429,8 +517,9 @@ Icon=/path/to/icon.ico</code></pre>
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="another-drive-windows">
+                <h2 id="another-drive-windows"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
                     Storing the game on another drive (windows)
                 </h2>
                 <ul>
@@ -456,8 +545,9 @@ Icon=/path/to/icon.ico</code></pre>
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="keyring-not-installed">
+                <h2 id="keyring-not-installed"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
                     (<i>linux</i>): microsoft account error: keyring error:
                     Platform secure storage failure: DBus error: The name is not
                     activatable
@@ -485,8 +575,9 @@ Icon=/path/to/icon.ico</code></pre>
                 </ul>
             </div>
 
+            <hr style="margin-top: 12px; margin-bottom: 12px; margin-left: 0px;" />
             <div class="faqitem">
-                <h2 id="keyring-error">
+                <h2 id="keyring-error"><img src="/quantumlauncher/icons/faq.svg" class="sicon" style="margin-right: 8px;" />
                     (<i>linux</i>) microsoft account error: keyring error:
                     Couldn't access platform secure storage: Secret Service: no
                     result found
@@ -503,37 +594,18 @@ Icon=/path/to/icon.ico</code></pre>
                     <li>Name it "Login" and set whatever password you want</li>
                 </ul>
             </div>
-        </div>
-
-        <!-- <div id="l-faq-page"></div> -->
-
-        <div class="paras">
-            <div class="para">
-                Proudly
-                <a href="https://github.com/Mrmayman/quantumlauncher"
-                    >open source</a
-                >
-                under
-                <a
-                    href="https://github.com/Mrmayman/quantumlauncher/blob/main/LICENSE"
-                    >GNU General Public License v3</a
-                >. <br /><br />
-                <a href="/contact">Contact Me</a>
+                </div>
             </div>
         </div>
-
-        <script>
-            (function () {
-                const topbar = document.getElementById("topbar-collapsed");
-                function onScroll() {
-                    if (window.scrollY > 80) {
-                        topbar.classList.add("visible");
-                    } else {
-                        topbar.classList.remove("visible");
-                    }
-                }
-                window.addEventListener("scroll", onScroll);
-            })();
-        </script>
+        <footer>
+            <p>Not affiliated with Microsoft or Mojang</p>
+            <p style="margin: 0px">© 2026 Mrmayman & Contributors</p>
+            <p style="margin: 0px; font-size: 14px">
+                Proudly Licensed under
+                <a href="https://www.gnu.org/licenses/gpl-3.0.en.html"
+                    >GNU GPL v3</a
+                >
+            </p>
+        </footer>
     </body>
 </html>

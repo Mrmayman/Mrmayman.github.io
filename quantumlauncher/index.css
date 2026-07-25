@@ -17,9 +17,12 @@ header {
 
 footer {
     display: flex;
-    flex-direction: column; /* column(...) */
-    width: 100%; /* width(Fill) */
-    align-items: center; /* align_x(Center) */
+    flex-direction: column;
+    /* column(...) */
+    width: 100%;
+    /* width(Fill) */
+    align-items: center;
+    /* align_x(Center) */
     margin-bottom: 32px;
 }
 
@@ -73,7 +76,7 @@ sub {
     width: fit-content;
 }
 
-.header-row > a {
+.header-row>a {
     text-decoration: none;
 }
 
@@ -168,9 +171,11 @@ h1:not(.header-row) {
 .hero-row-vignette {
     justify-content: center;
 }
+
 .hero-img-wrapper {
     position: relative;
-    display: inline-block; /* shrink to image size */
+    display: inline-block;
+    /* shrink to image size */
 }
 
 .hero-img-wrapper::after {
@@ -179,12 +184,11 @@ h1:not(.header-row) {
     inset: 0;
     pointer-events: none;
 
-    border-radius: 8px; /* match image */
-    background: radial-gradient(
-        ellipse at center,
-        rgba(0, 0, 0, 0) 50%,
-        rgba(0, 0, 0, 0.4) 100%
-    );
+    border-radius: 8px;
+    /* match image */
+    background: radial-gradient(ellipse at center,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 0.4) 100%);
 
     opacity: 1;
     transition: opacity 0.4s ease;
@@ -210,9 +214,11 @@ h1:not(.header-row) {
     display: flex;
     align-items: center;
 }
+
 .hero-button:not(:hover) {
     background-color: #c975c244;
 }
+
 .hero-button:hover {
     background-color: #c975c299;
 }
@@ -236,13 +242,37 @@ h1:not(.header-row) {
     padding-left: 16px;
     padding-right: 14px;
 }
+
 .header-button:not(:hover):not(.download-priority) {
     background-color: #c975c222;
 }
+
 .header-button:hover {
     background-color: #c975c277;
 }
 
 .header-button b {
     margin-right: 5px;
+}
+
+.faqitem {
+    margin-bottom: 24px;
+}
+
+.faqitem h2 {
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+.faqitem ul {
+    margin: 0px;
+    padding-left: 20px;
+}
+
+.faqitem li {
+    margin-bottom: 12px;
+}
+
+.faqitem p {
+    margin: 0px;
 }

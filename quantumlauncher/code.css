@@ -2,18 +2,16 @@
     display: flex;
     align-items: stretch;
     border: 1px solid #c975c233;
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.2) 100%
-    );
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.2) 100%);
     border-radius: 8px;
     margin-top: 8px;
 }
 
 .code-container pre {
     margin-top: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
 }
@@ -33,17 +31,20 @@
     padding: 8px;
     transition: 0.2s;
 }
+
 .code-copy:not(:hover):not(.code-copied) {
     background-color: #c975c233;
 }
+
 .code-copy:hover:not(.code-copied) {
     background-color: #c975c255;
 }
+
 .code-copy.code-copied {
     background-color: #c975c2bb;
 }
 
-.code-copy > img {
+.code-copy>img {
     width: 16px;
     height: 16px;
     filter: invert();
