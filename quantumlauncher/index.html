@@ -433,7 +433,28 @@
                             />
                             → <b>About This Mac</b>
                         </div>
-                        <hr />
+                        <div class="download-warning">
+                            <div>
+                                <b>NOTE</b>: On macOS, if you have a
+                                <b>"corrupted", "damaged" or "unverified" error</b>,
+                                run this in the terminal.<br>
+                                <sub style="margin-left: 1px;">Apple unfortunately demands a $99/year fee to make my app "verified" (<a
+                                    href="/quantumlauncher/faq.html#macos-gatekeeper"
+                                    >more info</a
+                                >)</sub>
+                            </div>
+                            <div class="code-container">
+                                <button
+                                    class="code-copy"
+                                    title="Copy to clipboard"
+                                >
+                                    <img
+                                        src="/quantumlauncher/icons/copy.svg"
+                                    />
+                                </button>
+                                <pre><code>xattr -rc /Applications/quantum-launcher.app</code></pre>
+                            </div>
+                        </div>
                         <div style="display: block">
                             <div style="margin-left: 3px">
                                 Or, use <b>Homebrew</b> to install:
@@ -448,28 +469,6 @@
                                     />
                                 </button>
                                 <pre><code>brew install hitblast/tap/quantum-launcher</code></pre>
-                            </div>
-                        </div>
-                        <hr />
-                        <div style="display: block">
-                            <div style="margin-left: 3px">
-                                <b>NOTE</b>: On macOS, if you have a
-                                "corrupted", "damaged" or "unverified" error,
-                                run this in the terminal: (<a
-                                    href="/quantumlauncher/faq.html#macos-gatekeeper"
-                                    >more info</a
-                                >)
-                            </div>
-                            <div class="code-container">
-                                <button
-                                    class="code-copy"
-                                    title="Copy to clipboard"
-                                >
-                                    <img
-                                        src="/quantumlauncher/icons/copy.svg"
-                                    />
-                                </button>
-                                <pre><code>xattr -rc /Applications/quantum-launcher.app</code></pre>
                             </div>
                         </div>
                     </div>
