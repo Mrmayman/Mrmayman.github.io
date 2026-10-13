@@ -8,6 +8,12 @@
     padding-bottom: 6px;
 }
 
+.downloads-outer {
+    /* 97-Year-Old HTML Programmer Still Layouts Their UI the Old Fashioned Way  */
+    margin-left: 58px;
+    max-width: 900px;
+}
+
 .downloads-tabs {
     display: flex;
     align-items: center;
@@ -127,7 +133,7 @@
     border: 2px solid #c975c277;
     border-radius: 8px;
     background-color: #c975c211;
-    padding: 8px 10px 2px;
+    padding: 13px 20px;
     margin-top: 5px;
     margin-bottom: 5px;
 }

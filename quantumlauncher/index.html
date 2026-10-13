@@ -324,7 +324,7 @@
 
             <!-- Downloads -->
 
-            <div style="min-height: 360px; margin-bottom: 24px">
+            <div style="min-height: 360px; margin-bottom: 24px" class="downloads-outer">
                 <div id="downloads" class="downloads shadow">
                     <div class="downloads-tabs">
                         <div class="downloads-heading">Downloads</div>
@@ -516,10 +516,29 @@
                             <button class="code-copy" title="Copy to clipboard">
                                 <img src="/quantumlauncher/icons/copy.svg" />
                             </button>
-                            <pre><code>flatpak remote-add quantum-launcher oci+https://mrmayman.github.io/ql-flatpak-remote/
+                            <pre><code>flatpak remote-add --if-not-exists quantumlauncher https://mrmayman.github.io/ql-flatpak-remote/quantumlauncher.flatpakrepo
 flatpak install io.github.Mrmayman.QuantumLauncher</code></pre>
                         </div>
-                        Or as a Fedora COPR
+                        <div class="download-warning">
+                            <details>
+                            <summary>Note: If you installed our flatpak before 13th October 2026, you may need to migrate</summary>
+                            <br>
+                            We have now moved to an OSTree-based flatpak repo. To migrate:
+                            <div class="code-container">
+                                <button class="code-copy" title="Copy to clipboard">
+                                    <img src="/quantumlauncher/icons/copy.svg" />
+                                </button>
+                                <pre><code>flatpak uninstall io.github.Mrmayman.QuantumLauncher
+
+flatpak remote-delete quantum-launcher
+
+flatpak remote-add --if-not-exists quantumlauncher https://mrmayman.github.io/ql-flatpak-remote/quantumlauncher.flatpakrepo
+
+flatpak install io.github.Mrmayman.QuantumLauncher</code></pre>
+                            </div>
+                            </details>
+                        </div>
+                        Or install it as a Fedora COPR
                         <div class="code-container" style="margin-top: 0px">
                             <button class="code-copy" title="Copy to clipboard">
                                 <img src="/quantumlauncher/icons/copy.svg" />
